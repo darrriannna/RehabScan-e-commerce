@@ -36,6 +36,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                         <div className="buttons text-center">
+                            <NavLink to="/bookappointment" className="btn m-2"><i></i> Boka tid ({state.length})</NavLink>
                             <NavLink to="/login" className="btn btn-dark m-2"><i className="fa fa-sign-in-alt mr-1"></i> Login</NavLink>
                             <NavLink to="/register" className="btn btn-dark m-2"><i className="fa fa-user-plus mr-1"></i> Register</NavLink>
                             <NavLink to="/cart" className="btn m-2"><i className="fa fa-cart-shopping mr-1"></i> Cart ({state.length})</NavLink>
