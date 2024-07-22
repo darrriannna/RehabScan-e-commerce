@@ -1,5 +1,5 @@
 .banner {
-    background-color: #f8f9fa; /* Light grey background */
+    background-color: #ffffff; /* Light grey background */
     color: #333; /* Dark text color */
     text-align: center;
     padding: 10px 0;
@@ -23,7 +23,7 @@
 
 .navbar {
         position: sticky;
-        top: 50px; /* Adjust based on the height of the banner */
+        top: 40px; /* Adjust based on the height of the banner */
         z-index: 1040; /* Ensure it is above the banner */
 }
 
@@ -58,10 +58,15 @@
   transform: translate(-50%, -50%);
   animation: expanding 2s linear infinite;
   cursor: pointer; /* Change cursor to pointer to indicate interactivity */
+  z-index: 1;
 }
 
+.circle-animation:hover{
+  z-index: 3;
+}
 .circle-animation:hover .pop-up {
   display: block; /* Show the pop-up on hover */
+
 }
 
 .pop-up {
@@ -81,7 +86,7 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 9000;
+  z-index: 4;
 }
 
 .animation-button{
@@ -102,36 +107,39 @@ vertical-align: middle;
     width: 30px;
     height: 30px;
     border: 3px solid rgb(129, 182, 236);
+    z-index: 2;
   }
   50% {
     width: 30px;
     height: 30px;
     border: 7px solid rgb(129, 182, 236);
+    z-index: 2;
   }
   100% {
     width: 30px;
     height: 30px;
     border: 3px solid rgb(129, 182, 236);
+    z-index: 2;
   }
 }
 
 /* Specific positions for each circle */
-.circle-animation1 { top: 25%; left: 22%; }
-.circle-animation2 { top: 25%; left: 40%; }
-.circle-animation3 { top: 50%; left: 31%; }
-.circle-animation4 { top: 45%; left: 26%; }
-.circle-animation5 { top: 45%; left: 36%; }
-.circle-animation6 { top: 53%; left: 44%; }
-.circle-animation7 { top: 53%; left: 18%; }
-.circle-animation8 { top: 69%; left: 28%; }
-.circle-animation9 { top: 69%; left: 34%; }
-.circle-animation10 { top: 84%; left: 28%; }
-.circle-animation11 { top: 84%; left: 33%; }
-.circle-animation12 { top: 42%; left: 78%; z-index: 999;}
-.circle-animation13 { top: 25%; left: 68%; z-index: 999;}
-.circle-animation14 { top: 38%; left: 68%; z-index: 999;}
-.circle-animation15 { top: 48%; left: 68%; z-index: 999;}
-.circle-animation16 { top: 42%; left: 57%; z-index: 999;}
+.circle-animation1 { top: 25%; left: 22%; z-index: 2;}
+.circle-animation2 { top: 25%; left: 40%; z-index: 2;}
+.circle-animation3 { top: 50%; left: 31%; z-index: 2;}
+.circle-animation4 { top: 45%; left: 26%; z-index: 2;}
+.circle-animation5 { top: 45%; left: 36%; z-index: 2;}
+.circle-animation6 { top: 53%; left: 44%; z-index: 2;}
+.circle-animation7 { top: 53%; left: 18%; z-index: 2;}
+.circle-animation8 { top: 69%; left: 28%; z-index: 2;}
+.circle-animation9 { top: 69%; left: 34%; z-index: 2;}
+.circle-animation10 { top: 84%; left: 28%; z-index: 2;}
+.circle-animation11 { top: 84%; left: 33%; z-index: 2;}
+.circle-animation12 { top: 42%; left: 78%; z-index: 2;}
+.circle-animation13 { top: 25%; left: 68%; z-index: 2;}
+.circle-animation14 { top: 38%; left: 68%; z-index: 2;}
+.circle-animation15 { top: 48%; left: 68%; z-index: 2;}
+.circle-animation16 { top: 42%; left: 57%; z-index: 2;}
 
 .mr-services-list {
   width: 100%;
@@ -227,22 +235,22 @@ vertical-align: middle;
   .mr-service-container .mr-price {
     margin: 0 10px;
   }
-  .circle-animation1 { top: 30%; left: 24%;}
-.circle-animation2 { top: 30%; left: 41%; }
-.circle-animation3 { top: 50%; left: 33%; }
-.circle-animation4 { top: 45%; left: 28%; }
-.circle-animation5 { top: 45%; left: 37%; }
-.circle-animation6 { top: 53%; left: 44%; }
-.circle-animation7 { top: 53%; left: 21%; }
-.circle-animation8 { top: 69%; left: 30%; }
-.circle-animation9 { top: 69%; left: 36%; }
-.circle-animation10 { top: 82%; left: 31%; }
-.circle-animation11 { top: 82%; left: 35%; }
-.circle-animation12 { top: 42%; left: 76%; z-index: 999;}
-.circle-animation13 { top: 25%; left: 66%; z-index: 999;}
-.circle-animation14 { top: 36%; left: 66%; z-index: 999;}
-.circle-animation15 { top: 48%; left: 66%; z-index: 999;}
-.circle-animation16 { top: 42%; left: 57%; z-index: 999;}
+  .circle-animation1 { top: 30%; left: 24%;  z-index: 2}
+.circle-animation2 { top: 30%; left: 41%;  z-index: 2}
+.circle-animation3 { top: 50%; left: 33%;  z-index: 2}
+.circle-animation4 { top: 45%; left: 28%;  z-index: 2}
+.circle-animation5 { top: 45%; left: 37%;  z-index: 2}
+.circle-animation6 { top: 53%; left: 44%;  z-index: 2}
+.circle-animation7 { top: 53%; left: 21%;  z-index: 2}
+.circle-animation8 { top: 69%; left: 30%;  z-index: 2}
+.circle-animation9 { top: 69%; left: 36%;  z-index: 2}
+.circle-animation10 { top: 82%; left: 31%;  z-index: 2}
+.circle-animation11 { top: 82%; left: 35%;  z-index: 2}
+.circle-animation12 { top: 42%; left: 76%; z-index: 2;}
+.circle-animation13 { top: 25%; left: 66%; z-index: 2;}
+.circle-animation14 { top: 36%; left: 66%; z-index: 2;}
+.circle-animation15 { top: 48%; left: 66%; z-index: 2;}
+.circle-animation16 { top: 42%; left: 57%; z-index: 2;}
 
 .circle-animation{
   max-width: 20px;

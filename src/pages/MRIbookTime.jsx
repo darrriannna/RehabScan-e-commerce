@@ -1,19 +1,19 @@
 import React from 'react';
-import BookingForm from '../components/BookingForm';
+import MRIForm from '../components/MRIForm';
 import { Footer, Navbar } from '../components';
 import '../styles/bookform.css';
 
-const BookTime = () => {
+const MRIbookTime = () => {
   return (
     <div>
       <Navbar />
       <div className="book-time-container">
-        <h2 className="book-time-text">Boka tid</h2>
+        <h2 className="book-time-text">Din undersökning</h2>
       </div>
-      <BookingForm />
+      <MRIForm />
       <Footer/>
     </div>
   );
 };
 
-export default BookTime;
+export default MRIbookTime;
