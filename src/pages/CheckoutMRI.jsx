@@ -1,8 +1,11 @@
 import React from "react";
 import { Footer, Navbar } from "../components";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import emailjs from 'emailjs-com';
+
 const CheckoutMRI = () => {
+  const navigate = useNavigate();
   const state = useSelector((state) => state.handleCart);
 
   const EmptyCart = () => {
@@ -18,6 +21,31 @@ const CheckoutMRI = () => {
         </div>
       </div>
     );
+  };
+
+  const handlePayment = (e) => {
+    e.preventDefault();
+    // Simulate payment process
+    // Replace with actual payment logic
+
+    // After successful payment, send email
+    const templateParams = state.map(item => ({
+      ...item.formData,
+      service: item.name,
+      policyConfirmed: item.formData.policyConfirmed ? 'Yes' : 'No',
+      noPacemakerConfirmed: item.formData.noPacemakerConfirmed ? 'Yes' : 'No'
+    }));
+
+    emailjs.send('service_t43b9l3', 'new_template_id', templateParams[0], 'jpDNG96sg4J956g8G')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+
+    // Redirect or show a success message
+    alert('Payment successful and email sent!');
+    navigate('/success'); // Redirect to a success page or another appropriate page
   };
 
   const ShowCheckout = () => {
@@ -46,16 +74,12 @@ const CheckoutMRI = () => {
                     <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                       Products ({totalItems})<span>${Math.round(subtotal)}</span>
                     </li>
-                    <li className="list-group-item d-flex justify-content-between align-items-center px-0">
-                      Shipping
-                      <span>${shipping}</span>
-                    </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                       <div>
                         <strong>Total amount</strong>
                       </div>
                       <span>
-                        <strong>${Math.round(subtotal + shipping)}</strong>
+                        <strong>${Math.round(subtotal)}</strong>
                       </span>
                     </li>
                   </ul>
@@ -68,171 +92,39 @@ const CheckoutMRI = () => {
                   <h4 className="mb-0">Dina uppgifter</h4>
                 </div>
                 <div className="card-body">
-                  <form className="needs-validation" novalidate>
+                  <form className="needs-validation" novalidate onSubmit={handlePayment}>
                     <div className="row g-3">
                       <div className="col-sm-6 my-1">
-                        <label for="firstName" className="form-label">
-                          First name
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="firstName"
-                          placeholder=""
-                          required
-                        />
+                        <label htmlFor="firstName" className="form-label">Förnamn</label>
+                        <input type="text" className="form-control" id="firstName" placeholder="" value="" required />
                         <div className="invalid-feedback">
                           Valid first name is required.
                         </div>
                       </div>
-
                       <div className="col-sm-6 my-1">
-                        <label for="lastName" className="form-label">
-                          Last name
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="lastName"
-                          placeholder=""
-                          required
-                        />
+                        <label htmlFor="lastName" className="form-label">Efternamn</label>
+                        <input type="text" className="form-control" id="lastName" placeholder="" value="" required />
                         <div className="invalid-feedback">
                           Valid last name is required.
                         </div>
                       </div>
-
                       <div className="col-12 my-1">
-                        <label for="email" className="form-label">
-                          Email
-                        </label>
-                        <input
-                          type="email"
-                          className="form-control"
-                          id="email"
-                          placeholder="you@example.com"
-                          required
-                        />
+                        <label htmlFor="email" className="form-label">Email <span className="text-muted">(Optional)</span></label>
+                        <input type="email" className="form-control" id="email" placeholder="you@example.com" />
                         <div className="invalid-feedback">
-                          Please enter a valid email address for shipping
-                          updates.
+                          Please enter a valid email address for shipping updates.
                         </div>
                       </div>
-
                       <div className="col-12 my-1">
-                        <label for="address" className="form-label">
-                          Address
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="address"
-                          placeholder="1234 Main St"
-                          required
-                        />
+                        <label htmlFor="address" className="form-label">Address</label>
+                        <input type="text" className="form-control" id="address" placeholder="1234 Main St" required />
                         <div className="invalid-feedback">
                           Please enter your shipping address.
                         </div>
                       </div>
-
-                      <div className="col-md-3 my-1">
-                        <label for="zip" className="form-label">
-                          Postnummer
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="zip"
-                          placeholder=""
-                          required
-                        />
-                        <div className="invalid-feedback">
-                          Postnummer required.
-                        </div>
-                      </div>
                     </div>
-
                     <hr className="my-4" />
-
-                    <h4 className="mb-3">Payment</h4>
-
-                    <div className="row gy-3">
-                      <div className="col-md-6">
-                        <label for="cc-name" className="form-label">
-                          Name on card
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="cc-name"
-                          placeholder=""
-                          required
-                        />
-                        <small className="text-muted">
-                          Full name as displayed on card
-                        </small>
-                        <div className="invalid-feedback">
-                          Name on card is required
-                        </div>
-                      </div>
-
-                      <div className="col-md-6">
-                        <label for="cc-number" className="form-label">
-                          Credit card number
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="cc-number"
-                          placeholder=""
-                          required
-                        />
-                        <div className="invalid-feedback">
-                          Credit card number is required
-                        </div>
-                      </div>
-
-                      <div className="col-md-3">
-                        <label for="cc-expiration" className="form-label">
-                          Expiration
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="cc-expiration"
-                          placeholder=""
-                          required
-                        />
-                        <div className="invalid-feedback">
-                          Expiration date required
-                        </div>
-                      </div>
-
-                      <div className="col-md-3">
-                        <label for="cc-cvv" className="form-label p-2">
-                          CVV
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="cc-cvv"
-                          placeholder=""
-                          required
-                        />
-                        <div className="invalid-feedback">
-                          Security code required
-                        </div>
-                      </div>
-                    </div>
-
-                    <hr className="my-4" />
-
-                    <button
-                      className="w-100 btn btn-primary "
-                      type="submit" disabled
-                    >
-                      Continue to checkout
-                    </button>
+                    <button className="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
                   </form>
                 </div>
               </div>
@@ -242,13 +134,14 @@ const CheckoutMRI = () => {
       </>
     );
   };
+
   return (
     <>
       <Navbar />
       <div className="container my-3 py-3">
         <h1 className="text-center">Checkout</h1>
         <hr />
-        {state.length ? <ShowCheckout /> : <EmptyCart />}
+        {state.length > 0 ? <ShowCheckout /> : <EmptyCart />}
       </div>
       <Footer />
     </>
@@ -256,3 +149,4 @@ const CheckoutMRI = () => {
 };
 
 export default CheckoutMRI;
+

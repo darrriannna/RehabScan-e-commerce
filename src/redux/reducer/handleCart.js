@@ -1,33 +1,43 @@
-const cart = []
+import { ADD_TO_CART, DEL_CART } from "../action/index";
 
-const handleCart = (state=cart, action) =>{
-    const product = action.payload
-    switch(action.type){
-        case "ADDITEM":
-            // Check if product already in cart
-            const exist = state.find((x) => x.id === product.id)
-            if(exist){
-                // Increase the quantity
-                return state.map((x)=>x.id ===product.id?{...x, qty: x.qty+1}:x)
-            }
-            else{
-                return [...state, {...product, qty:1}]
-            }
-            break;
-        case "DELITEM":
-            const exist2 = state.find((x) => x.id === product.id)
-            if(exist2.qty === 1){
-                return state.filter((x)=>x.id!==exist2.id)
-            }
-            else{
-                return state.map((x)=> x.id===product.id?{...x, qty:x.qty-1}:x)
-            }
-            break;
+const initialState = {
+  products: [],
+  services: []
+};
 
-        default:
-            return state
-            break;
-    }
-}
+const handleCart = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_TO_CART:
+      if (action.payload.type === 'service') {
+        // Add to services
+        return {
+          ...state,
+          services: [...state.services, action.payload]
+        };
+      } else {
+        // Add to products
+        return {
+          ...state,
+          products: [...state.products, action.payload]
+        };
+      }
+    case DEL_CART:
+      if (action.payload.type === 'service') {
+        // Remove from services
+        return {
+          ...state,
+          services: state.services.filter(item => item.id !== action.payload.id)
+        };
+      } else {
+        // Remove from products
+        return {
+          ...state,
+          products: state.products.filter(item => item.id !== action.payload.id)
+        };
+      }
+    default:
+      return state;
+  }
+};
 
-export default handleCart
+export default handleCart;

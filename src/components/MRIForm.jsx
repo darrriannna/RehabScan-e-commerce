@@ -1,13 +1,12 @@
-// src/components/MRIForm.js
-import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import emailjs from 'emailjs-com';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addCart } from '../redux/action';
 import '../styles/bookform.css';
 
-const MRIForm = () => {
-  const location = useLocation();
+const MRIForm = ({ serviceTitle }) => {
   const navigate = useNavigate();
-  const { service } = location.state || { service: '' };
+  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -15,8 +14,14 @@ const MRIForm = () => {
     personnummer: '',
     message: '',
     policyConfirmed: false,
-    noPacemakerConfirmed: false
+    noPacemakerConfirmed: false,
+    serviceTitle: serviceTitle || 'Default Service' // Default value if serviceTitle is undefined
   });
+
+  // Update formData when serviceTitle changes
+  useEffect(() => {
+    setFormData(prevData => ({ ...prevData, serviceTitle }));
+  }, [serviceTitle]);
 
   const [error, setError] = useState('');
   const [pacemakerError, setPacemakerError] = useState('');
@@ -51,31 +56,17 @@ const MRIForm = () => {
       return;
     }
 
-    const templateParams = {
-      ...formData,
-      service: service,
-      policyConfirmed: formData.policyConfirmed ? 'Yes' : 'No',
-      noPacemakerConfirmed: formData.noPacemakerConfirmed ? 'Yes' : 'No'
+    const mriProduct = {
+      id: new Date().getTime(), // Unique identifier
+      title: formData.serviceTitle,
+      price: 100, // Set price or get from service data
+      qty: 1,
+      type: 'service',
+      formData
     };
 
-    emailjs.send('service_t43b9l3', 'new_template_id', templateParams, 'jpDNG96sg4J956g8G')
-      .then((result) => {
-        console.log(result.text);
-        // Redirect to checkout page
-        navigate('/checkoutMRI');
-      }, (error) => {
-        console.log(error.text);
-      });
-
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      personnummer: '',
-      message: '',
-      policyConfirmed: false,
-      noPacemakerConfirmed: false
-    });
+    dispatch(addCart(mriProduct));
+    navigate('/checkoutMRI');
   };
 
   return (
@@ -87,7 +78,7 @@ const MRIForm = () => {
           Väljer du fakturabetalning skickas din faktura efter ditt besök.
         </p>
         <label>Service:</label>
-        <input type="text" name="service" value={service} readOnly />
+        <input type="text" name="serviceTitle" value={formData.serviceTitle} readOnly />
       </div>
       <div>
         <label>Namn:</label>
@@ -115,8 +106,8 @@ const MRIForm = () => {
       <div>
         <label>
           <input type="checkbox" name="policyConfirmed" checked={formData.policyConfirmed} onChange={handleChange} required />
-          <span className='text-form-mri'>Jag har tagit del av RehabScan integritetspolicy och godkänner villkoren för hur mina personuppgifter lagras samt försäkrar att jag läst köpvillkoren.
-        </span></label>
+          <span className='text-form-mri'>Jag har tagit del av RehabScan integritetspolicy och godkänner villkoren för hur mina personuppgifter lagras samt försäkrar att jag läst köpvillkoren.</span>
+        </label>
         {error && <div className="error">{error}</div>}
       </div>
       <div>

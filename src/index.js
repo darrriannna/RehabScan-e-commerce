@@ -6,8 +6,9 @@ import '../src/styles/index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import { Home, Product, Products, AboutPage, ContactPage, Cart, Login, Register, Checkout, PageNotFound, BookTime, MRIbookTime, CheckoutMRI } from "./pages"
+import { Home, Product, Products, AboutPage, ContactPage, Cart, Checkout, PageNotFound, BookTime, MRIbookTime, CheckoutMRI } from "./pages"
 import MRI from './pages/MRI';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,9 +23,7 @@ root.render(
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/bookappointment" element={<BookTime />} />
-        <Route path="/register" element={<Register />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/mri-booking" element={<MRIbookTime />} />
         <Route path="/checkoutMRI" element={<CheckoutMRI />} />

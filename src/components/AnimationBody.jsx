@@ -1,139 +1,33 @@
-// src/components/AnimationBody.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/index.css';
+import services from '../pages/ServicesData'; // Import the services list
 
 const AnimationBody = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const navigate = useNavigate();
 
-  const animationData = [
-    { id: 1, text: 'MR Höger axel' },
-    { id: 2, text: 'MR Vänster axel' },
-    { id: 3, text: 'MR Prostatascreening' },
-    { id: 4, text: 'MR Bröstrygg' },
-    { id: 5, text: 'MR Höftleder och bäckenben' },
-    { id: 6, text: 'MR Höger fotled' },
-    { id: 7, text: 'MR Höger armbåge' },
-    { id: 8, text: 'MR Höger handled' },
-    { id: 9, text: 'MR Höger knä' },
-    { id: 10, text: 'MR Ländrygg' },
-    { id: 11, text: 'MR Halsrygg' },
-    { id: 12, text: 'MR Vänster fotled' },
-    { id: 13, text: 'MR Vänster armbåge' },
-    { id: 14, text: 'MR Vänster handled' },
-    { id: 15, text: 'MR Vänster knä' }
-  ];
-
   const toggleList = () => {
     setIsExpanded(!isExpanded);
   };
 
-  const handleBook = (service) => {
-    navigate(`/mri-booking`, { state: { service } });
+  const handleBook = (serviceId) => {
+    navigate('/mri-booking', { state: { serviceId } });
   };
 
   return (
     <div>
       <div className="banner-images-container">
         <div className="banner-image">
-          <img src="./assets/Humanbody.png" alt=" 1" className="image-front" />
-          <div className="circle-animation circle-animation1">
-            <div className="pop-up">
-              <p className='animation-text'>MR Höger axel</p>
-              <button className='animation-button btn-link' onClick={() => handleBook('MR Höger axel')}>Boka</button>
+          <img src="./assets/Humanbody.png" alt="Human body" className="image-front" />
+          {services.map((service, index) => (
+            <div className={`circle-animation circle-animation${index + 1}`} key={service.id}>
+              <div className="pop-up">
+                <p className='animation-text'>{service.title}</p>
+                <button className='animation-button btn-link' onClick={() => handleBook(service)}>Boka</button>
+              </div>
             </div>
-          </div>
-          <div className="circle-animation circle-animation2">
-            <div className="pop-up">
-              <p className='animation-text'>MR Vänster axel</p>
-              <button className='animation-button btn-link' onClick={() => handleBook('MR Vänster axel')}>Boka</button>
-            </div>
-          </div>
-          <div className="circle-animation circle-animation3">
-            <div className="pop-up">
-              <p className='animation-text'>MR Prostatascreening</p>
-              <button className='animation-button btn-link' onClick={() => handleBook('MR Prostatascreening')}>Boka</button>
-            </div>
-          </div>
-          <div className="circle-animation circle-animation4">
-            <div className="pop-up">
-              <p className='animation-text'>MR Höftleder och bäckenben</p>
-              <button className='animation-button btn-link' onClick={() => handleBook('MR Höftleder och bäckenben')}>Boka</button>
-            </div>
-          </div>
-          <div className="circle-animation circle-animation5">
-            <div className="pop-up">
-              <p className='animation-text'>MR Höftleder och bäckenben</p>
-              <button className='animation-button btn-link' onClick={() => handleBook('MR Höftleder och bäckenben')}>Boka</button>
-            </div>
-          </div>
-          <div className="circle-animation circle-animation6">
-            <div className="pop-up">
-              <p className='animation-text'>MR Vänster handled</p>
-              <button className='animation-button btn-link' onClick={() => handleBook('MR Vänster handled')}>Boka</button>
-            </div>
-          </div>
-          <div className="circle-animation circle-animation7">
-            <div className="pop-up">
-              <p className='animation-text'>MR Höger handled</p>
-              <button className='animation-button btn-link' onClick={() => handleBook('MR Höger handled')}>Boka</button>
-            </div>
-          </div>
-          <div className="circle-animation circle-animation8">
-            <div className="pop-up">
-              <p className='animation-text'>MR Höger knä</p>
-              <button className='animation-button btn-link' onClick={() => handleBook('MR Höger knä')}>Boka</button>
-            </div>
-          </div>
-          <div className="circle-animation circle-animation9">
-            <div className="pop-up">
-              <p className='animation-text'>MR Vänster knä</p>
-              <button className='animation-button btn-link' onClick={() => handleBook('MR Vänster knä')}>Boka</button>
-            </div>
-          </div>
-          <div className="circle-animation circle-animation10">
-            <div className="pop-up">
-              <p className='animation-text'>MR Höger fotled</p>
-              <button className='animation-button btn-link' onClick={() => handleBook('MR Höger fotled')}>Boka</button>
-            </div>
-          </div>
-          <div className="circle-animation circle-animation11">
-            <div className="pop-up">
-              <p className='animation-text'>MR Vänster fotled</p>
-              <button className='animation-button btn-link' onClick={() => handleBook('MR Vänster fotled')}>Boka</button>
-            </div>
-          </div>
-          <div className="circle-animation circle-animation12">
-            <div className="pop-up">
-              <p className='animation-text'>MR Höger armbåge</p>
-              <button className='animation-button btn-link' onClick={() => handleBook('MR Höger armbåge')}>Boka</button>
-            </div>
-          </div>
-          <div className="circle-animation circle-animation13">
-            <div className="pop-up">
-              <p className='animation-text'>MR Halsrygg</p>
-              <button className='animation-button btn-link' onClick={() => handleBook('MR Halsrygg')}>Boka</button>
-            </div>
-          </div>
-          <div className="circle-animation circle-animation14">
-            <div className="pop-up">
-              <p className='animation-text'>MR Bröstrygg</p>
-              <button className='animation-button btn-link' onClick={() => handleBook('MR Bröstrygg')}>Boka</button>
-            </div>
-          </div>
-          <div className="circle-animation circle-animation15">
-            <div className="pop-up">
-              <p className='animation-text'>MR Ländrygg</p>
-              <button className='animation-button btn-link' onClick={() => handleBook('MR Ländrygg')}>Boka</button>
-            </div>
-          </div>
-          <div className="circle-animation circle-animation16">
-            <div className="pop-up">
-              <p className='animation-text'>MR Vänster armbåge</p>
-              <button className='animation-button btn-link' onClick={() => handleBook('MR Vänster armbåge')}>Boka</button>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
       <button className="toggle-button" onClick={toggleList}>
@@ -142,14 +36,14 @@ const AnimationBody = () => {
       </button>
 
       <ul className={`mr-services-list ${isExpanded ? 'expanded' : 'collapsed'}`}>
-        {animationData.map(item => (
-          <li className='list-element' key={item.id}>
+        {services.map(service => (
+          <li className='list-element' key={service.id}>
             <div className="mr-service-container">
               <div className='mr-service-info'>
-                <p>{item.text}</p>
-                <p className='mr-price'>0000kr <span className='more-link'><a href="http://#">Läs mer</a></span></p>
+                <p>{service.title}</p>
+                <p className='mr-price'>{service.price}kr <span className='more-link'><a href="http://#">Läs mer</a></span></p>
               </div>
-              <button className="btn-primary" onClick={() => handleBook(item.text)}>Boka nu</button>
+              <button className="btn-primary" onClick={() => handleBook(service)}>Boka nu</button>
             </div>
           </li>
         ))}
@@ -159,3 +53,4 @@ const AnimationBody = () => {
 };
 
 export default AnimationBody;
+
