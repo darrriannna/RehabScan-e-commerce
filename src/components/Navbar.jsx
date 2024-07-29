@@ -4,7 +4,12 @@ import { useSelector } from 'react-redux';
 import Banner from './Banner'; // Import the Banner component
 
 const Navbar = () => {
-    const state = useSelector(state => state.handleCart);
+    const productsState = useSelector(state => state.products.products);
+    const servicesState = useSelector(state => state.services.services);
+
+    const productCount = productsState.reduce((total, product) => total + product.qty, 0);
+    const serviceCount = servicesState.reduce((total, service) => total + service.qty, 0);
+
     return (
         <>
             <Banner />
@@ -37,7 +42,8 @@ const Navbar = () => {
                         </ul>
                         <div className="buttons text-center">
                             <NavLink to="/bookappointment" className="btn btn-dark m-2"><i></i> Boka tid </NavLink>
-                            <NavLink to="/cart" className="btn m-2"><i className="fa fa-cart-shopping mr-1"></i> Cart ({state.length})</NavLink>
+                            <NavLink to="/cart?type=products" className="btn m-2"><i className="fa fa-cart-shopping mr-1"></i> Product Cart ({productCount})</NavLink>
+                            <NavLink to="/cart?type=services" className="btn m-2"><i className="fa fa-cart-shopping mr-1"></i> Service Cart ({serviceCount})</NavLink>
                         </div>
                     </div>
                 </div>
@@ -47,3 +53,4 @@ const Navbar = () => {
 }
 
 export default Navbar;
+

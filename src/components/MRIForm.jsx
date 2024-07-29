@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addCart } from '../redux/action';
+import { addService } from '../redux/action/serviceAction';
 import '../styles/bookform.css';
 
-const MRIForm = ({ serviceTitle }) => {
+const MRIForm = ({ serviceTitle, servicePrice }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -15,12 +15,13 @@ const MRIForm = ({ serviceTitle }) => {
     message: '',
     policyConfirmed: false,
     noPacemakerConfirmed: false,
-    serviceTitle: serviceTitle || 'Default Service'
+    serviceTitle: serviceTitle || 'Default Service',
+    servicePrice: servicePrice || 0
   });
 
   useEffect(() => {
-    setFormData(prevData => ({ ...prevData, serviceTitle }));
-  }, [serviceTitle]);
+    setFormData(prevData => ({ ...prevData, serviceTitle, servicePrice }));
+  }, [serviceTitle, servicePrice]);
 
   const [error, setError] = useState('');
   const [pacemakerError, setPacemakerError] = useState('');
@@ -55,16 +56,16 @@ const MRIForm = ({ serviceTitle }) => {
       return;
     }
 
-    const mriProduct = {
+    const mriService = {
       id: new Date().getTime(), // Unique identifier
       title: formData.serviceTitle,
-      price: 100, // Set price or get from service data
+      price: formData.servicePrice, // Use the service price from formData
       qty: 1,
       type: 'service',
       formData
     };
 
-    dispatch(addCart(mriProduct));
+    dispatch(addService(mriService));
     navigate('/checkoutMRI');
   };
 

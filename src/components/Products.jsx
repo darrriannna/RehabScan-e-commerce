@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addCart } from "../redux/action";
+import { addCart } from "../redux/action/productAction";
 
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -15,7 +15,7 @@ const Products = () => {
   const dispatch = useDispatch();
 
   const addProduct = (product) => {
-    dispatch(addCart(product));
+    dispatch(addProduct(product));
   };
 
   const filterProduct = (cat) => {

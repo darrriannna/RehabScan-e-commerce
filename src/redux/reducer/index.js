@@ -1,9 +1,10 @@
-// src/redux/reducers/index.js
 import { combineReducers } from 'redux';
-import handleCart from './handleCart';
+import productsReducer from './productReducer';
+import servicesReducer from './serviceReducer';
 
-const rootReducers = combineReducers({
-  handleCart,
+const rootReducer = combineReducers({
+  products: productsReducer,
+  services: servicesReducer
 });
 
-export default rootReducers;
+export default rootReducer;

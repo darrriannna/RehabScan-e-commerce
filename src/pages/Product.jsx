@@ -3,7 +3,7 @@ import Skeleton from "react-loading-skeleton";
 import { Link, useParams } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import { useDispatch } from "react-redux";
-import { addCart } from "../redux/action";
+import { addCart } from "../redux/action/productAction";
 import { Footer, Navbar } from "../components";
 import products from "./ProductData"; // Adjust the path to where your products.js file is located
 
@@ -17,7 +17,7 @@ const Product = () => {
   const dispatch = useDispatch();
 
   const addProduct = (product) => {
-    dispatch(addCart(product));
+    dispatch(addProduct(product));
   };
 
   useEffect(() => {

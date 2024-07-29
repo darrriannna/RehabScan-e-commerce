@@ -6,7 +6,7 @@ import emailjs from 'emailjs-com';
 
 const CheckoutMRI = () => {
   const navigate = useNavigate();
-  const state = useSelector((state) => state.handleCart);
+  const services = useSelector((state) => state.services.services); // Access services state slice
 
   const EmptyCart = () => {
     return (
@@ -29,7 +29,7 @@ const CheckoutMRI = () => {
     // Replace with actual payment logic
 
     // After successful payment, send email
-    const templateParams = state.map(item => ({
+    const templateParams = services.map(item => ({
       ...item.formData,
       service: item.name,
       policyConfirmed: item.formData.policyConfirmed ? 'Yes' : 'No',
@@ -50,15 +50,13 @@ const CheckoutMRI = () => {
 
   const ShowCheckout = () => {
     let subtotal = 0;
-    let shipping = 30.0;
     let totalItems = 0;
-    state.map((item) => {
-      return (subtotal += item.price * item.qty);
+
+    services.forEach((item) => {
+      subtotal += item.price * item.qty;
+      totalItems += item.qty;
     });
 
-    state.map((item) => {
-      return (totalItems += item.qty);
-    });
     return (
       <>
         <div className="container py-5">
@@ -72,7 +70,7 @@ const CheckoutMRI = () => {
                 <div className="card-body">
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                      Products ({totalItems})<span>${Math.round(subtotal)}</span>
+                      Services ({totalItems})<span>${Math.round(subtotal)}</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                       <div>
@@ -141,7 +139,7 @@ const CheckoutMRI = () => {
       <div className="container my-3 py-3">
         <h1 className="text-center">Checkout</h1>
         <hr />
-        {state.length > 0 ? <ShowCheckout /> : <EmptyCart />}
+        {services.length > 0 ? <ShowCheckout /> : <EmptyCart />}
       </div>
       <Footer />
     </>
@@ -149,4 +147,5 @@ const CheckoutMRI = () => {
 };
 
 export default CheckoutMRI;
+
 
