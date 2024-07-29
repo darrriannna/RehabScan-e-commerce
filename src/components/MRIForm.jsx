@@ -15,10 +15,9 @@ const MRIForm = ({ serviceTitle }) => {
     message: '',
     policyConfirmed: false,
     noPacemakerConfirmed: false,
-    serviceTitle: serviceTitle || 'Default Service' // Default value if serviceTitle is undefined
+    serviceTitle: serviceTitle || 'Default Service'
   });
 
-  // Update formData when serviceTitle changes
   useEffect(() => {
     setFormData(prevData => ({ ...prevData, serviceTitle }));
   }, [serviceTitle]);
@@ -118,3 +117,4 @@ const MRIForm = ({ serviceTitle }) => {
 };
 
 export default MRIForm;
+

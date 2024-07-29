@@ -23,16 +23,16 @@ const Cart = () => {
     );
   };
 
-  const addItem = (product) => {
-    dispatch(addCart(product));
+  const addItem = (item, type) => {
+    dispatch(addCart(item, type));
   };
-  const removeItem = (product) => {
-    dispatch(delCart(product));
+
+  const removeItem = (item, type) => {
+    dispatch(delCart(item, type));
   };
 
   const ShowCart = () => {
     let subtotal = 0;
-    let shipping = 30.0;
     let totalItems = 0;
 
     products.forEach((item) => {
@@ -44,6 +44,8 @@ const Cart = () => {
       subtotal += item.price * item.qty;
       totalItems += item.qty;
     });
+
+    const shipping = products.length > 0 ? 30.0 : 0.0;
 
     return (
       <>
@@ -69,11 +71,11 @@ const Cart = () => {
                           </div>
                           <div className="col-lg-4 col-md-6">
                             <div className="d-flex mb-4" style={{ maxWidth: "300px" }}>
-                              <button className="btn px-3" onClick={() => removeItem(item)}>
+                              <button className="btn px-3" onClick={() => removeItem(item, 'product')}>
                                 <i className="fas fa-minus"></i>
                               </button>
                               <p className="mx-5">{item.qty}</p>
-                              <button className="btn px-3" onClick={() => addItem(item)}>
+                              <button className="btn px-3" onClick={() => addItem(item, 'product')}>
                                 <i className="fas fa-plus"></i>
                               </button>
                             </div>
@@ -100,11 +102,11 @@ const Cart = () => {
                           </div>
                           <div className="col-lg-4 col-md-6">
                             <div className="d-flex mb-4" style={{ maxWidth: "300px" }}>
-                              <button className="btn px-3" onClick={() => removeItem(item)}>
+                              <button className="btn px-3" onClick={() => removeItem(item, 'service')}>
                                 <i className="fas fa-minus"></i>
                               </button>
                               <p className="mx-5">{item.qty}</p>
-                              <button className="btn px-3" onClick={() => addItem(item)}>
+                              <button className="btn px-3" onClick={() => addItem(item, 'service')}>
                                 <i className="fas fa-plus"></i>
                               </button>
                             </div>
