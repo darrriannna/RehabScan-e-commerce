@@ -1,6 +1,8 @@
-const initialState = {
-  products: []
-};
+// reducers/productReducer.js
+
+import { loadState, saveState } from '../../utils/localStorage';
+
+const initialState = loadState() || { products: [] };
 
 const productsReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -12,6 +14,7 @@ const productsReducer = (state = initialState, action) => {
       } else {
         state.products.push({ ...item, qty: 1 });
       }
+      saveState({ ...state });
       return { ...state };
 
     case "REMOVE_PRODUCT":
@@ -23,6 +26,7 @@ const productsReducer = (state = initialState, action) => {
           state.products.splice(delProductIndex, 1);
         }
       }
+      saveState({ ...state });
       return { ...state };
 
     default:
@@ -31,6 +35,7 @@ const productsReducer = (state = initialState, action) => {
 };
 
 export default productsReducer;
+
 
 
 

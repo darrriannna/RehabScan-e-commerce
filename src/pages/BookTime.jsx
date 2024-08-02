@@ -9,7 +9,7 @@ const BookTime = () => {
       <Navbar />
       <div className="book-time-container">
         <h2 className="book-time-text">Boka tid</h2>
-      </div>
+        </div>
       <BookingForm />
       <Footer/>
     </div>

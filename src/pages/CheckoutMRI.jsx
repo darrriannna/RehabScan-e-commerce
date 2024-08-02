@@ -31,7 +31,7 @@ const CheckoutMRI = () => {
     // After successful payment, send email
     const templateParams = services.map(item => ({
       ...item.formData,
-      service: item.name,
+      service: item.formData.serviceTitle, // Ensure the correct service title is included
       policyConfirmed: item.formData.policyConfirmed ? 'Yes' : 'No',
       noPacemakerConfirmed: item.formData.noPacemakerConfirmed ? 'Yes' : 'No'
     }));
@@ -60,7 +60,7 @@ const CheckoutMRI = () => {
     return (
       <>
         <div className="container py-5">
-            <h1>Din bokning</h1>
+          <h1>Din bokning</h1>
           <div className="row my-4">
             <div className="col-md-5 col-lg-4 order-md-last">
               <div className="card mb-4">
@@ -69,15 +69,21 @@ const CheckoutMRI = () => {
                 </div>
                 <div className="card-body">
                   <ul className="list-group list-group-flush">
-                    <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                      Services ({totalItems})<span>${Math.round(subtotal)}</span>
-                    </li>
+                    {services.map((service) => (
+                      <li key={service.id} className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div>
+                          <h6 className="my-0">{service.formData.serviceTitle}</h6>
+                          <small className="text-muted">Quantity: {service.qty}</small>
+                        </div>
+                        <span className="text-muted">{service.price} kr</span> {/* Updated to display price in SEK */}
+                      </li>
+                    ))}
                     <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                       <div>
                         <strong>Total amount</strong>
                       </div>
                       <span>
-                        <strong>${Math.round(subtotal)}</strong>
+                        <strong>{subtotal} kr</strong> {/* Updated to display total in SEK */}
                       </span>
                     </li>
                   </ul>
@@ -90,18 +96,18 @@ const CheckoutMRI = () => {
                   <h4 className="mb-0">Dina uppgifter</h4>
                 </div>
                 <div className="card-body">
-                  <form className="needs-validation" novalidate onSubmit={handlePayment}>
+                  <form className="needs-validation" noValidate onSubmit={handlePayment}>
                     <div className="row g-3">
                       <div className="col-sm-6 my-1">
                         <label htmlFor="firstName" className="form-label">Förnamn</label>
-                        <input type="text" className="form-control" id="firstName" placeholder="" value="" required />
+                        <input type="text" className="form-control" id="firstName" placeholder="" required />
                         <div className="invalid-feedback">
                           Valid first name is required.
                         </div>
                       </div>
                       <div className="col-sm-6 my-1">
                         <label htmlFor="lastName" className="form-label">Efternamn</label>
-                        <input type="text" className="form-control" id="lastName" placeholder="" value="" required />
+                        <input type="text" className="form-control" id="lastName" placeholder="" required />
                         <div className="invalid-feedback">
                           Valid last name is required.
                         </div>
@@ -147,5 +153,3 @@ const CheckoutMRI = () => {
 };
 
 export default CheckoutMRI;
-
-

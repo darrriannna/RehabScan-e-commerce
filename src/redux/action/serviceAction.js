@@ -1,27 +1,23 @@
-export const addService = (service) => (dispatch) => {
-    dispatch({
-      type: "ADD_SERVICE",
-      payload: service
-    });
-    saveCartToLocalStorage();
-  };
+// serviceAction.js
+
+export const addService = (service) => ({
+    type: 'ADD_SERVICE',
+    payload: service
+  });
   
-  export const saveCartToLocalStorage = () => {
-    return (dispatch, getState) => {
-      const cart = getState().handleCart;
-      localStorage.setItem("cart", JSON.stringify(cart));
-    };
+  export const removeService = (serviceId) => ({
+    type: 'REMOVE_SERVICE',
+    payload: serviceId
+  });
+  
+  // Save and load functions for local storage
+  export const saveCartToLocalStorage = (cart) => {
+    localStorage.setItem('cart', JSON.stringify(cart));
   };
   
   export const loadCartFromLocalStorage = () => {
-    return (dispatch) => {
-      const cart = JSON.parse(localStorage.getItem("cart"));
-      if (cart) {
-        dispatch({
-          type: "LOAD_CART",
-          payload: cart
-        });
-      }
-    };
+    const savedCart = localStorage.getItem('cart');
+    return savedCart ? JSON.parse(savedCart) : [];
   };
+  
   

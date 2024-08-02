@@ -14,7 +14,6 @@ const MRIbookTime = () => {
   // Find the service title based on the serviceId
   const service = services.find(service => service.id === serviceId);
   const serviceTitle = service ? service.title : 'Default Service'; // Provide a fallback title
-  const servicePrice = service ? service.price : 0;
 
   console.log('Resolved serviceTitle:', serviceTitle); // Debugging line
 
@@ -24,11 +23,15 @@ const MRIbookTime = () => {
       <div className="book-time-container">
         <h2 className="book-time-text">Din undersökning</h2>
       </div>
-      <MRIForm serviceTitle={serviceTitle} servicePrice={servicePrice} />
+      <MRIForm serviceTitle={serviceTitle} />
       <Footer />
     </div>
   );
 };
 
 export default MRIbookTime;
+
+
+
+
 

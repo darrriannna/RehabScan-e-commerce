@@ -11,8 +11,8 @@ const AnimationBody = () => {
     setIsExpanded(!isExpanded);
   };
 
-  const handleBook = (serviceId) => {
-    navigate('/mri-booking', { state: { serviceId } });
+  const handleBook = (service) => {
+    navigate('/mri-booking', { state: { serviceId: service.id } });
   };
 
   return (
@@ -41,7 +41,7 @@ const AnimationBody = () => {
             <div className="mr-service-container">
               <div className='mr-service-info'>
                 <p>{service.title}</p>
-                <p className='mr-price'>{service.price}kr <span className='more-link'><a href="http://#">Läs mer</a></span></p>
+                <p className='mr-price'>{service.price} kr <span className='more-link'><a href="http://#">Läs mer</a></span></p>
               </div>
               <button className="btn-primary" onClick={() => handleBook(service)}>Boka nu</button>
             </div>

@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { addService } from '../redux/action/serviceAction';
 import '../styles/bookform.css';
 
-const MRIForm = ({ serviceTitle, servicePrice }) => {
+const MRIForm = ({ serviceTitle }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -15,13 +15,12 @@ const MRIForm = ({ serviceTitle, servicePrice }) => {
     message: '',
     policyConfirmed: false,
     noPacemakerConfirmed: false,
-    serviceTitle: serviceTitle || 'Default Service',
-    servicePrice: servicePrice || 0
+    serviceTitle: serviceTitle || 'Default Service'
   });
 
   useEffect(() => {
-    setFormData(prevData => ({ ...prevData, serviceTitle, servicePrice }));
-  }, [serviceTitle, servicePrice]);
+    setFormData(prevData => ({ ...prevData, serviceTitle }));
+  }, [serviceTitle]);
 
   const [error, setError] = useState('');
   const [pacemakerError, setPacemakerError] = useState('');
@@ -59,7 +58,7 @@ const MRIForm = ({ serviceTitle, servicePrice }) => {
     const mriService = {
       id: new Date().getTime(), // Unique identifier
       title: formData.serviceTitle,
-      price: formData.servicePrice, // Use the service price from formData
+      price: 100, // Set price or get from service data
       qty: 1,
       type: 'service',
       formData
@@ -118,4 +117,7 @@ const MRIForm = ({ serviceTitle, servicePrice }) => {
 };
 
 export default MRIForm;
+
+
+
 
