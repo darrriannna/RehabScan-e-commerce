@@ -11,8 +11,9 @@
 }
 
 .banner-text {
-    font-size: 1.2rem;
-    
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #2CA3C8;
     animation: fade-in-out 3s infinite;
 }
 
@@ -25,7 +26,24 @@
         position: sticky;
         top: 40px; /* Adjust based on the height of the banner */
         z-index: 1040; /* Ensure it is above the banner */
+        
 }
+.nav-link{
+ font-size: 18px;
+ font-weight: 500;
+
+}
+.nav-link:hover{
+  color: #2CA3C8;
+}
+
+.nav-link:active{
+  color: #2CA3C8;
+}
+.nav-link:visited{
+  color: #2CA3C8;
+}
+
 
 .banner-images-container {
   width: 100%;
@@ -35,6 +53,7 @@
   overflow: hidden;
   position: relative;
 }
+
 
 .banner-image {
   position: relative;
@@ -350,16 +369,72 @@ vertical-align: middle;
   text-decoration: underline;
   
 }
-
-
-.carousel-image{
-  display: block;
-  max-width: 1200px;
-  max-height: 700px;
+.slideshow {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
 }
 
-@media (max-width: 768px) {
-  .carousel-caption {
-    max-width: 700px;
-  }
+.slideshow-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 1px;
+  height: 500px; /* Adjust as necessary */
+  overflow: hidden;
+}
+
+.slideshow-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.slideshow-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.slideshow-control.prev {
+  left: 10px;
+}
+
+.slideshow-control.next {
+  right: 10px;
+}
+
+.slideshow-dots {
+  text-align: center;
+  padding: 10px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #717171;
 }

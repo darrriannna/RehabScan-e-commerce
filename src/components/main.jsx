@@ -1,41 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/index.css'; // Import your custom CSS file
+import Slideshow from './HomeSlide';
+
+
 
 const Home = () => {
+
   return (
     <div className="main">
-      <div className="container">
-        <div className="carousel">
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img src="./assets/joyful-woman-dancing-blue-background.jpg" className="carousel-image" alt="..."/>
-              <div className="carousel-caption">
-                <h2 className="logo_pic">NO Kliniken</h2>
-                <p className="carousel-text">Högsta kvalitet på sjukvård</p>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <img src="./assets/front-view-osteopathic-therapist-checking-female-patient-s-shoulder-movement.jpg" className="carousel-image" alt="..."/>
-              <div className="carousel-caption">
-                <h2>Get help of highly professional doctors.</h2>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <img src="./assets/closeup-medical-technician-starting-mri-scan-examination-patient-hospital.jpg" className="carousel-image" alt="..."/>
-              <div className="carousel-caption">
-                <h2>Get your MRI appointment without waiting for months</h2>
-              </div>
-            </div>
-          </div>
-          <button className="carousel-control-prev" type="button" aria-label="Previous">
-           <span className="carousel-control-prev-icon"></span>
-         </button>
-        <button className="carousel-control-next" type="button" aria-label="Next">
-        <span className="carousel-control-next-icon"></span>
-       </button>
-        </div>
-      </div>
-
+      
+      <Slideshow />
       <div className="container">
         <div className="row">
           <div className="col">

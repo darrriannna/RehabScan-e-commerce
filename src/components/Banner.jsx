@@ -5,8 +5,8 @@ const Banner = () => {
     const messages = [
         "MR utan remiss",
         "7-12 dagar väntetid på MR",
-        "Billigast i Sverige",
-        "Leveranstid på produkter 1-3 dagar",
+        "Legitimerad naprapat",
+        "Specialistläkare inom ortopedi och rygg kirurgi",
     ];
 
     const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
