@@ -378,9 +378,20 @@ vertical-align: middle;
 .slideshow-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 1px;
   height: 500px; /* Adjust as necessary */
   overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+
+.slide.active {
+  opacity: 1;
 }
 
 .slideshow-image {
@@ -389,15 +400,40 @@ vertical-align: middle;
   height: 100%;
   object-fit: cover;
   transition: opacity 1s ease-in-out;
-  opacity: 0;
 }
 
-.fade-in {
-  opacity: 1;
+.slide-text {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(17, 131, 146, 0.79);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 100%;
 }
 
-.fade-out {
-  opacity: 0;
+.slide-text p {
+  margin: 0 0 10px;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.btn-slide {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  color: white;
+  background-color: #2CA3C8; /* Button color */
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.btn-slide:hover {
+  background-color: #0d6a7f; /* Darker button color on hover */
 }
 
 .slideshow-control {
@@ -437,4 +473,55 @@ vertical-align: middle;
 
 .dot.active {
   background-color: #717171;
+}
+
+.about-text{
+  font-size: 20px;
+  padding-left: 2px;
+  margin: 5px;
+}
+
+.card-container {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  /* Optional: Adds a shadow to the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-container:hover {
+  transform: scale(1.05); /* Scales the card to 105% of its original size */
+  background-color: #f0f0f0; /* Changes background color on hover */
+}
+
+.card-img-top {
+  transition: opacity 0.3s ease;
+}
+
+.card-container:hover .card-img-top {
+  opacity: 0.8; /* Slightly fades the image on hover */
+}
+
+.text-center{
+color: #05789b;
+margin-top: 5px;
+}
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.bold{
+  font-weight: 600;
 }

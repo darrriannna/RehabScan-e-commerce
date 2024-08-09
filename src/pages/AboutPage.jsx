@@ -1,59 +1,73 @@
-import React from 'react'
+import React from 'react';
 import { Footer, Navbar } from "../components";
+import { Link } from 'react-router-dom';
+import '../styles/index.css';
+
 const AboutPage = () => {
   return (
     <>
       <Navbar />
       <div className="container my-3 py-3">
-        <h1 className="text-center">About Us</h1>
+        <h1 className="text-center">Om oss</h1>
         <hr />
-        <p className="lead text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-          facere doloremque veritatis odit similique sequi. Odit amet fuga nam
-          quam quasi facilis sed doloremque saepe sint perspiciatis explicabo
-          totam vero quas provident ipsam, veritatis nostrum velit quos
-          recusandae est mollitia esse fugit dolore laudantium. Ex vel explicabo
-          earum unde eligendi autem praesentium, doloremque distinctio nesciunt
-          porro tempore quis eaque labore voluptatibus ea necessitatibus
-          exercitationem tempora molestias. Ad consequuntur veniam sequi ullam
-          tempore vel tenetur soluta dolore sunt maxime aliquam corporis est,
-          quo saepe dolorem optio minus sint nemo totam dolorum! Reprehenderit
-          delectus expedita a alias nam recusandae illo debitis repellat libero,
-          quasi explicabo molestiae saepe, dolorem tempore itaque eveniet quam
-          dignissimos blanditiis excepturi harum numquam vel nihil? Ipsum
-        </p>
-
-        <h2 className="text-center py-4">Our Products</h2>
+        <div className="container">
+          <p className="about-text">
+            Vår vision är att leverera rätt och snabb behandling med professionell, hög och bred kompetens under samma tak med patientens hela hälsa i fokus för att förbättra och bibehålla god livskvalitet.
+          </p>
+        </div>
+        
         <div className="row">
-          <div className="col-md-3 col-sm-6 mb-3 px-3">
-            <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
+          <Link to="/naprapat" className="col-md-3 col-sm-6 mb-3 px-3 text-decoration-none">
+            <div className="card h-100 card-container">
+              <img className="card-img-top img-fluid" src="/assets/osteopathy-patoient-getting-tretment-massage.jpg" alt="" height={160} />
               <div className="card-body">
-                <h5 className="card-title text-center">Mens's Clothing</h5>
+                <h5 className="card-title text-center">Naprapat</h5>
               </div>
             </div>
-          </div>
-          <div className="col-md-3 col-sm-6 mb-3 px-3">
-            <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
+          </Link>
+          <Link to="/ortoped" className="col-md-3 col-sm-6 mb-3 px-3 text-decoration-none">
+            <div className="card h-100 card-container">
+              <img className="card-img-top img-fluid" src="/assets/front-view-doctor-explaining-anatomy.jpg" alt="" height={160} />
               <div className="card-body">
-                <h5 className="card-title text-center">Women's Clothing</h5>
+                <h5 className="card-title text-center">Ortoped</h5>
               </div>
             </div>
-          </div>
-          <div className="col-md-3 col-sm-6 mb-3 px-3">
-            <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/1927259/pexels-photo-1927259.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
+          </Link>
+          <Link to="/mri" className="col-md-3 col-sm-6 mb-3 px-3 text-decoration-none">
+            <div className="card h-100 card-container">
+              <img className="card-img-top img-fluid" src="/assets/doctor-getting-patient-ready-ct-scan.jpg" alt="" height={160} />
               <div className="card-body">
-                <h5 className="card-title text-center">Jewelery</h5>
+                <h5 className="card-title text-center">MRI intygg</h5>
               </div>
             </div>
-          </div>
-          <div className="col-md-3 col-sm-6 mb-3 px-3">
-            <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
+          </Link>
+          <Link to="/rehab" className="col-md-3 col-sm-6 mb-3 px-3 text-decoration-none">
+            <div className="card h-100 card-container">
+              <img className="card-img-top img-fluid" src="/assets/woman-doing-fitness-exercises-gym-holding-massage-foam-roller.jpg" alt="" height={180} />
               <div className="card-body">
-                <h5 className="card-title text-center">Electronics</h5>
+                <h5 className="card-title text-center">Rehab</h5>
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        {/* How to Find Us Section */}
+        <div className="container my-3 py-3">
+          <h2 className="text-center">Hitta hit</h2>
+          <hr />
+          <div className="row">
+            <h4>Vi finns på Karl Johansgatan 100, 414 55 Göteborg</h4>
+            <div className="col-md-12">
+              <div className="map-container">
+                <iframe
+                  title="Google Maps Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.453840212694!2d11.97523081532602!3d57.71984867530073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464ffb7e8d23a74b%3A0xe8c4a30c1a0b4b!2sKarl%20Johansgatan%20100%2C%20414%2055%20G%C3%B6teborg!5e0!3m2!1sen!2sse!4v1691565371432!5m2!1sen!2sse"
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                ></iframe>
               </div>
             </div>
           </div>
@@ -61,7 +75,7 @@ const AboutPage = () => {
       </div>
       <Footer />
     </>
-  )
+  );
 }
 
-export default AboutPage
+export default AboutPage;
