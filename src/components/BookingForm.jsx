@@ -65,7 +65,7 @@ const BookingForm = () => {
       setAvailableServices([]);
       setAvailableTimes([]);
     }
-  }, [startDate, bookedSlots, selectedDoctor]);
+  }, [startDate, bookedSlots, selectedDoctor, doctors]);
   
 
   const handleChange = (e) => {
