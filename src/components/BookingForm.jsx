@@ -66,6 +66,7 @@ const BookingForm = () => {
       setAvailableTimes([]);
     }
   }, [startDate, bookedSlots, selectedDoctor]);
+  
 
   const handleChange = (e) => {
     setFormData({

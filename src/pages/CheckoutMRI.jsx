@@ -50,11 +50,9 @@ const CheckoutMRI = () => {
 
   const ShowCheckout = () => {
     let subtotal = 0;
-    let totalItems = 0;
 
     services.forEach((item) => {
       subtotal += item.price * item.qty;
-      totalItems += item.qty;
     });
 
     return (
