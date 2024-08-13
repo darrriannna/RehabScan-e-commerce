@@ -8,6 +8,7 @@ export { default as BookTime } from './BookTime';
 export { default as MRIbookTime } from './MRIbookTime';
 export { default as CheckoutMRI } from './CheckoutMRI';
 export { default as services } from './ServicesData';
+export { default as Naprapati } from './naprapati';
 
 
 

@@ -6,7 +6,7 @@ import '../src/styles/index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import { Home, AboutPage, ContactPage, Cart, Checkout, PageNotFound, BookTime, MRIbookTime, CheckoutMRI } from "./pages"
+import { Home, AboutPage, ContactPage, Cart, Checkout, PageNotFound, BookTime, MRIbookTime, CheckoutMRI, Naprapati } from "./pages"
 import MRI from './pages/MRI';
 
 
@@ -25,6 +25,7 @@ root.render(
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/mri-booking" element={<MRIbookTime />} />
         <Route path="/checkoutMRI" element={<CheckoutMRI />} />
+        <Route path="/naprapati" element={<Naprapati />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Provider>

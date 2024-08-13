@@ -38,7 +38,7 @@ const Navbar = () => {
                         </ul>
                         <div className="buttons text-center">
                             <NavLink to="/bookappointment" className="btn btn-info m-2 fs-5"><i></i>Boka tid </NavLink>
-                            <NavLink to="/cart?type=services" className=" btn btn-light m-2"><i className="fa fa-cart-shopping mr-1"></i> Service Cart ({serviceCount})</NavLink>
+                            <NavLink to="/cart?type=services" className=" btn btn-light m-2"><i className="fa fa-cart-shopping mr-1"></i> Varukorg ({serviceCount})</NavLink>
                         </div>
                     </div>
                 </div>

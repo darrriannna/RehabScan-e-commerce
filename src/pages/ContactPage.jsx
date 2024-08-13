@@ -15,12 +15,12 @@ const ContactPage = () => {
           <div className="col-md-4 col-lg-4 col-sm-8 mx-auto">
             <form>
               <div class="form my-3">
-                <label for="Name">Name</label>
+                <label for="Name">Namn</label>
                 <input
                   type="email"
                   class="form-control"
                   id="Name"
-                  placeholder="Enter your name"
+                  placeholder="Förnamn och Efternamn"
                 />
               </div>
               <div class="form my-3">
@@ -33,7 +33,7 @@ const ContactPage = () => {
                 />
               </div>
               <div class="form  my-3">
-                <label for="Password">Message</label>
+                <label for="Password">Meddelande</label>
                 <textarea
                   rows={5}
                   class="form-control"
@@ -47,7 +47,7 @@ const ContactPage = () => {
                   type="submit"
                   disabled
                 >
-                  Send
+                  Skicka
                 </button>
               </div>
             </form>

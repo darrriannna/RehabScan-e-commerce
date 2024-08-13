@@ -10,18 +10,15 @@ const Footer = () => {
           <div className="col-md-6">
             <h5>Information</h5>
             <ul className="list-unstyled">
-              <li><Link to="/om-oss">Om oss</Link></li>
-              <li><Link to="/fragor-svar">Frågor & Svar</Link></li>
-              <li><Link to="/kopvillkor">Köpvillkor</Link></li>
+              <li><Link to="/about">Om oss</Link></li>
               <li><Link to="/integritetspolicy">Integritetspolicy</Link></li>
             </ul>
           </div>
           <div className="col-md-6">
             <h5>Kundservice</h5>
             <ul className="list-unstyled">
-              <li><Link to="/byte-retur">Byte & Retur</Link></li>
-              <li><Link to="/kontakta-oss">Kontakta oss</Link></li>
-              <li><Link to="/varukorg">Varukorg</Link></li>
+              <li><Link to="/contact">Kontakta oss</Link></li>
+              <li><Link to="/cart">Varukorg</Link></li>
             </ul>
           </div>
         </div>

@@ -17,7 +17,7 @@ const AboutPage = () => {
         </div>
         
         <div className="row">
-          <Link to="/naprapat" className="col-md-3 col-sm-6 mb-3 px-3 text-decoration-none">
+          <Link to="/Naprapati" className="col-md-3 col-sm-6 mb-3 px-3 text-decoration-none">
             <div className="card h-100 card-container">
               <img className="card-img-top img-fluid" src="/assets/osteopathy-patoient-getting-tretment-massage.jpg" alt="" height={160} />
               <div className="card-body">

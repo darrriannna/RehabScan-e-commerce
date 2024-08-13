@@ -670,6 +670,14 @@ margin-top: 5px;
   object-fit: cover;
 }
 
+@media (max-width: 600px) {
+  .image-main {
+      width: 300px;
+      margin: 0 auto;
+      display: block;
+  }
+}
+
 .content-right {
   flex: 2;
   margin-left: 40px;
