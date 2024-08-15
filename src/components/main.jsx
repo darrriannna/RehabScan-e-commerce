@@ -13,7 +13,7 @@ const Home = () => {
         <h3>
         På vår privata klinik i Göteborg erbjuder vi naprapati och ortopediska tjänster för att möta dina hälsobehov.</h3>
         <div className="about-link">
-          <a href="/AboutPage" className="about-anchor">
+          <a href="/about" className="about-anchor">
             Läs mer <span className="about-arrow">→</span>
           </a>
         </div>
@@ -33,7 +33,7 @@ const Home = () => {
             <p>- Höft/bäcken/knä smärta</p>
             <h2>?</h2>
           </div>
-          <NavLink to="/bookappointment" className="btn btn-info m-2 fs-5">
+          <NavLink to="*" className="btn btn-info m-2 fs-5">
             <i></i>Boka tid 
           </NavLink>
         </div>

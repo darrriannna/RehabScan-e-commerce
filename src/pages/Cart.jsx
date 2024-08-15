@@ -12,23 +12,26 @@ const Cart = () => {
   };
 
   const removeItem = (item) => {
-    dispatch(removeService(item));
+    dispatch(removeService(item.id)); // Make sure to pass the item id
   };
 
-  const subtotal = services.reduce((sum, item) => sum + item.price * item.qty, 0);
-  const totalItems = services.reduce((sum, item) => sum + item.qty, 0);
+  // Ensure services is an array
+  const validServices = Array.isArray(services) ? services : [];
+
+  const subtotal = validServices.reduce((sum, item) => sum + item.price * item.qty, 0);
+  const totalItems = validServices.reduce((sum, item) => sum + item.qty, 0);
 
   return (
     <div className="container my-3 py-3">
-      <h1 className="text-center">Service Cart</h1>
+      <h1 className="text-center">Varukorg</h1>
       <hr />
-      {services.length === 0 ? (
+      {validServices.length === 0 ? (
         <div className="container">
           <div className="row">
             <div className="col-md-12 py-5 bg-light text-center">
-              <h4 className="p-3 display-5">Your Cart is Empty</h4>
+              <h4 className="p-3 display-5">Din varukorg är tom</h4>
               <Link to="/" className="btn btn-outline-dark mx-4">
-                <i className="fa fa-arrow-left"></i> Continue Exploring Services
+                <i className="fa fa-arrow-left"></i> Fortsätt utforska tjänster
               </Link>
             </div>
           </div>
@@ -39,18 +42,10 @@ const Cart = () => {
             <div className="row d-flex justify-content-center my-4">
               <div className="col-md-8">
                 <div className="card mb-4">
-                  <div className="card-header py-3">
-                    <h5 className="mb-0">Service List</h5>
-                  </div>
                   <div className="card-body">
-                    {services.map((item) => (
+                    {validServices.map((item) => (
                       <div key={item.id}>
                         <div className="row d-flex align-items-center">
-                          <div className="col-lg-3 col-md-12">
-                            <div className="bg-image rounded" data-mdb-ripple-color="light">
-                              <img src={item.image} alt={item.title} width={100} height={75} />
-                            </div>
-                          </div>
                           <div className="col-lg-5 col-md-6">
                             <p><strong>{item.title}</strong></p>
                           </div>
@@ -66,7 +61,7 @@ const Cart = () => {
                             </div>
                             <p className="text-start text-md-center">
                               <strong>
-                                <span className="text-muted">{item.qty}</span> x ${item.price}
+                                <span className="text-muted">{item.qty}</span> x {item.price} kr
                               </strong>
                             </p>
                           </div>
@@ -85,19 +80,19 @@ const Cart = () => {
                   <div className="card-body">
                     <ul className="list-group list-group-flush">
                       <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                        Services ({totalItems})<span>${Math.round(subtotal)}</span>
+                        Services ({totalItems})<span>{subtotal} kr</span>
                       </li>
                       <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                         <div>
                           <strong>Total amount</strong>
                         </div>
                         <span>
-                          <strong>${Math.round(subtotal)}</strong>
+                          <strong>{subtotal} kr</strong>
                         </span>
                       </li>
                     </ul>
                     <Link to="/checkout-mri" className="btn btn-dark btn-lg btn-block">
-                      Go to checkout
+                      Gå till kassan
                     </Link>
                   </div>
                 </div>
@@ -111,5 +106,8 @@ const Cart = () => {
 };
 
 export default Cart;
+
+
+
 
 

@@ -14,6 +14,7 @@ const AnimationBody = () => {
   const handleBook = (service) => {
     navigate('/mri-booking', { state: { serviceId: service.id } });
   };
+  
 
   return (
     <div>
@@ -53,4 +54,5 @@ const AnimationBody = () => {
 };
 
 export default AnimationBody;
+
 

@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addService } from '../redux/action/serviceAction';
 import '../styles/bookform.css';
+import services from '../pages/ServicesData'; // Import your services data
 
-const MRIForm = ({ serviceTitle }) => {
+const MRIForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
+
+  const serviceId = location.state?.serviceId; // Retrieve the serviceId from location state
 
   const [formData, setFormData] = useState({
     name: '',
@@ -15,15 +19,25 @@ const MRIForm = ({ serviceTitle }) => {
     message: '',
     policyConfirmed: false,
     noPacemakerConfirmed: false,
-    serviceTitle: serviceTitle || 'Default Service'
+    serviceTitle: '',
+    price: 0
   });
-
-  useEffect(() => {
-    setFormData(prevData => ({ ...prevData, serviceTitle }));
-  }, [serviceTitle]);
 
   const [error, setError] = useState('');
   const [pacemakerError, setPacemakerError] = useState('');
+
+  useEffect(() => {
+    if (serviceId) {
+      const service = services.find(service => service.id === serviceId);
+      if (service) {
+        setFormData(prevData => ({
+          ...prevData,
+          serviceTitle: service.title,
+          price: service.price
+        }));
+      }
+    }
+  }, [serviceId]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -58,7 +72,7 @@ const MRIForm = ({ serviceTitle }) => {
     const mriService = {
       id: new Date().getTime(), // Unique identifier
       title: formData.serviceTitle,
-      price: 100, // Set price or get from service data
+      price: formData.price, // Use the price from the form data
       qty: 1,
       type: 'service',
       formData
@@ -69,8 +83,8 @@ const MRIForm = ({ serviceTitle }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form onSubmit={handleSubmit} className="mri-form">
+      <div className="form-section">
         <h2 className='header-mri'>Kundinformation</h2>
         <p className='text-form-mri'>
           Vi använder ditt personnummer för hanteringen av undersökningsinformation och för att hitta din folkbokföringsadress dit vi skickar kallelse och undersökningsresultat.
@@ -79,37 +93,44 @@ const MRIForm = ({ serviceTitle }) => {
         <label>Service:</label>
         <input type="text" name="serviceTitle" value={formData.serviceTitle} readOnly />
       </div>
-      <div>
+      
+      <div className="form-section">
         <label>Namn:</label>
         <input type="text" name="name" value={formData.name} onChange={handleChange} required />
       </div>
-      <div>
+      
+      <div className="form-section">
         <label>Email:</label>
         <input type="email" name="email" value={formData.email} onChange={handleChange} required />
       </div>
-      <div>
-        <label>Personnummer <span>ÅÅÅÅMMDDXXXX</span></label>
+      
+      <div className="form-section">
+        <label>Personnummer <span>(ÅÅÅÅMMDDXXXX)</span></label>
         <input type="text" name="personnummer" value={formData.personnummer} onChange={handleChange} required />
       </div>
-      <div>
-        <label>Medellande:</label>
+      
+      <div className="form-section">
+        <label>Meddelande:</label>
         <textarea name="message" value={formData.message} onChange={handleChange} required />
       </div>
-      <div>
+      
+      <div className="form-section">
         <label>
           <input type="checkbox" name="noPacemakerConfirmed" checked={formData.noPacemakerConfirmed} onChange={handleChange} />
           <span className='text-form-mri'>Jag har ingen pacemaker.</span>
         </label>
         {pacemakerError && <div className="error">{pacemakerError}</div>}
       </div>
-      <div>
+      
+      <div className="form-section">
         <label>
           <input type="checkbox" name="policyConfirmed" checked={formData.policyConfirmed} onChange={handleChange} required />
           <span className='text-form-mri'>Jag har tagit del av RehabScan integritetspolicy och godkänner villkoren för hur mina personuppgifter lagras samt försäkrar att jag läst köpvillkoren.</span>
         </label>
         {error && <div className="error">{error}</div>}
       </div>
-      <div>
+      
+      <div className="form-section">
         <button type="submit">Skicka</button>
       </div>
     </form>
@@ -117,6 +138,11 @@ const MRIForm = ({ serviceTitle }) => {
 };
 
 export default MRIForm;
+
+
+
+
+
 
 
 

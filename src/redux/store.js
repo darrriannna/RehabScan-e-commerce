@@ -1,8 +1,6 @@
-// store.js
-
 import { createStore } from 'redux';
-import rootReducer from './reducer';
-import { loadState, saveState } from '../utils/localStorage';
+import rootReducer from './reducer'; // Import the root reducer
+import { loadState, saveState } from '../utils/localStorage'; // Ensure this path is correct
 
 const persistedState = loadState();
 
@@ -16,3 +14,5 @@ store.subscribe(() => {
 });
 
 export default store;
+
+

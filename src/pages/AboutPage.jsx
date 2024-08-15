@@ -56,7 +56,7 @@ const AboutPage = () => {
           <h2 className="text-center">Hitta hit</h2>
           <hr />
           <div className="row">
-            <h4>Vi finns på Karl Johansgatan 100, 414 55 Göteborg</h4>
+            <h4 className='text-center p-3'>Vi finns på Karl Johansgatan 100, 414 55 Göteborg</h4>
             <div className="col-md-12">
               <div className="map-container">
                 <iframe

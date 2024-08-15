@@ -1,39 +1,40 @@
-// reducers/serviceReducer.js
+const initialState = {
+  services: []
+};
 
-import { loadState, saveState } from '../../utils/localStorage';
-
-const initialState = loadState() || { services: [] };
-
-const servicesReducer = (state = initialState, action) => {
+const serviceReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD_SERVICE":
-      const item = action.payload;
-      const serviceIndex = state.services.findIndex(serv => serv.id === item.id);
-      if (serviceIndex !== -1) {
-        state.services[serviceIndex].qty += 1;
-      } else {
-        state.services.push({ ...item, qty: 1 });
-      }
-      saveState({ ...state });
-      return { ...state };
+    case 'ADD_SERVICE':
+      const { id } = action.payload;
+      const existingService = state.services.find(service => service.id === id);
 
-    case "REMOVE_SERVICE":
-      const delItem = action.payload;
-      const delServiceIndex = state.services.findIndex(serv => serv.id === delItem.id);
-      if (delServiceIndex !== -1) {
-        state.services[delServiceIndex].qty -= 1;
-        if (state.services[delServiceIndex].qty === 0) {
-          state.services.splice(delServiceIndex, 1);
-        }
+      if (existingService) {
+        return {
+          ...state,
+          services: state.services.map(service =>
+            service.id === id
+              ? { ...service, qty: service.qty + 1 }
+              : service
+          )
+        };
+      } else {
+        return {
+          ...state,
+          services: [...state.services, { ...action.payload, qty: 1 }]
+        };
       }
-      saveState({ ...state });
-      return { ...state };
+
+    case 'REMOVE_SERVICE':
+      return {
+        ...state,
+        services: state.services.filter(service => service.id !== action.payload)
+      };
 
     default:
       return state;
   }
 };
 
-export default servicesReducer;
+export default serviceReducer;
 
   
