@@ -480,8 +480,28 @@ vertical-align: middle;
   padding-left: 2px;
   margin: 5px;
 }
+.container-contact{
+  color: #2CA3C8;
+}
+.blue-small{
+  color: #2CA3C8;
+  font-weight: 600;
+}
+.image-naprapat{
+  border-radius: 10px;
+}
+.container-naprapat-services{
+  background-color: #2ca4c8d6;
+  color: #eef3f5;
+  border-radius: 5px;
+  padding: 5px;
+}
 
+.list-naprapat-services{
+  margin: 4px;
+}
 .card-container {
+ 
   transition: transform 0.3s ease, background-color 0.3s ease;
   /* Optional: Adds a shadow to the card */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -663,6 +683,12 @@ margin-top: 5px;
   padding: 10px;
 }
 
+.container-about-us{
+  background-color: #2ca4c8d6;
+  color: #eef3f5;
+  border-radius: 5px;
+}
+
 .image-main {
   flex: 1;
   max-width: 50%;
@@ -738,4 +764,26 @@ margin-top: 5px;
   .content-right {
     margin-left: 0;
   }
+}
+
+.list-ortoped-services{
+  list-style: none;
+  padding: 10px;
+  
+}
+.li-ort{
+  padding: 2px;
+}
+.container-ortoped-services{
+ 
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(7, 1, 1);
+  border-radius: 10px;
+  padding: 10pxs;
+}
+.icon-ortopedi{
+  max-width: 50px;
+  padding: 2px;
+  margin-right: 7px;
 }

@@ -6,8 +6,8 @@ const ContactPage = () => {
   return (
     <>
       <Navbar />
-      <div className="container my-3 py-3">
-        <h1 className="text-center">HÄR FINNS VI</h1>
+      <div className="container container-contact my-3 py-3">
+        <h1 className="text-center blue-text">HÄR FINNS VI</h1>
         <hr />
         <p className="text-center">Karl Johansgatan 100, 414 55 Göteborg</p>
         <p className="text-center">070-582 21 42</p>

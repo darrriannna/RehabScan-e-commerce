@@ -7,26 +7,29 @@ const Ortopedi = () => {
     <>
       <Navbar />
       <div className="container my-3 py-3">
-        <h1 className="text-center">Naprapati</h1>
+        <h1 className="text-center blue-text">Ortopedi</h1>
         <hr />
         <div className="container">
-          <p className="about-text">
-          Naprapati är en manuell terapi, med händerna, och tillhör svensk hälso- och sjukvård. Med naprapati förebygger och behandlar man olika besvär och smärtor som främst är kopplade till olika rörelser. Har du ont i till exempel nacke, axlar och rygg kan du få behandling av oss i Göteborg. Du får ligga på en speciell behandlingsbänk där vi sen ger dig massage, töjer smärtande muskler, 
-          trycker på olika punkter och behandlar dina leder.
-
-          <p>På Göteborgs NoPainKliniken behandlar vi bland annat:</p>
-          <ul>
-            <li>Spänningar och värk i nacke, axlar och muskler</li>
-            <li>Nackspärr, tennisarmbåge, musarm</li>
-            <li>Ont i ryggen som orsakas av att muskler och leder inte fungerar som de ska</li>
-            <li>Olika idrottsskador</li>
-            <li>Migrän, yrsel, domningar i armar och ben</li>
+          
+          <div className='container-ortoped-services'>
+          <ul className='list-ortoped-services'>
+            <li className='p-2 li-ort'> <img className='icon-ortopedi' src="/assets/pain_3736120.png" alt="pain-icon" />Lider du av långvariga rygg& nackbesvär, med eller utan smärta?</li>
+            <li className='p-2 li-ort'> <img className='icon-ortopedi' src="/assets/bone-pain_8752366.png" alt="bone"/> Är du opererad men fortsätter att ha besvär? </li>
+            <li className='p-2 li-ort'><img className='icon-ortopedi' src="/assets/health_2634148.png" alt="problem"/>Har du återkommande problem som påverkar din vardag?  </li>
+            <li className='p-2 li-ort'><img className='icon-ortopedi' src="/assets/rehabilitation_9600892.png" alt="rehab"/>Vill du veta orsaken och hur du kan bli bättre?</li>
           </ul>
-            <p>Nedan ser du en Naprapat i arbete och olika behandlingar vi utför här i Göteborg.</p> 
-          </p>
+          </div>
+       <p className="about-text">
+        Som specialist inom ortopedi och ryggkirurgi erbjuder jag en noggrann bedömning för att identifiera källan till dina besvär. 
+        Genom avancerade undersökningsmetoder och en detaljerad granskning av dina röntgenbilder, kan vi fastställa orsaken till dina problem. Med hjälp av diagnostiska blockader, 
+       där lokalbedövning används, kan vi snabbt avgöra om du svarar positivt på behandlingen. Om du upplever minst 70% förbättring inom 10 minuter kan en mer långsiktig behandling erbjudas.
+</p> 
+ <p className='about-text'>Efter en grundlig utredning får du en individanpassad behandlingsplan, utformad för att ge dig bästa möjliga resultat och hjälpa dig att återfå din livskvalitet.
+</p>
+  <p className='about-text'>Låt mig hjälpa dig att bli fri från smärta och återgå till ett aktivt liv. </p>
+<p className='blue-text text-center'>Boka en konsultation idag för en professionell bedömning och behandlingsplan.</p>
         </div>
-        <img className="card-img-top img-fluid" src="/assets/osteopathy-patoient-getting-tretment-massage.jpg" alt="" height={160} />
-       
+      
         </div>
       
       <Footer />

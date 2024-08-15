@@ -28,6 +28,12 @@ const Navbar = () => {
                                 <NavLink className="nav-link" to="/about">Om oss</NavLink>
                             </li>
                             <li className="nav-item">
+                                <NavLink className="nav-link" to="/ortopedi">Ortopedi</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/naprapati">Naprapati</NavLink>
+                            </li>
+                            <li className="nav-item">
                                 <NavLink className="nav-link" to="/contact">Kontakta oss</NavLink>
                             </li>
                         </ul>

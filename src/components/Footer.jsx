@@ -26,7 +26,7 @@ const Footer = () => {
             <ul className="list-unstyled">
               <li><Link to="/contact">Kontakta oss</Link></li>
               <div className="opening-hours">
-      <h3>ÖPPETTIDER</h3>
+      <h3 className="pt-3">ÖPPETTIDER</h3>
       <div className="hours">
         <div className="day">
           <span>Måndag:</span> <span>08:00 – 16:00</span>

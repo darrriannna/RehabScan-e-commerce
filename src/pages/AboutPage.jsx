@@ -8,16 +8,20 @@ const AboutPage = () => {
     <>
       <Navbar />
       <div className="container my-3 py-3">
-        <h1 className="text-center">Om oss</h1>
+        <h1 className="text-center blue-text">Om oss</h1>
         <hr />
-        <div className="container">
-          <p className="about-text">
+        <div className="container container-about-us">
+          <p className="about-text p-2">
             Vår vision är att leverera rätt och snabb behandling med professionell, hög och bred kompetens under samma tak med patientens hela hälsa i fokus för att förbättra och bibehålla god livskvalitet.
           </p>
-        </div>
+          <p className='about-text p-2'>Vi värnar om att just du ska känna dig sedd och omhändertagen med ditt besvär. Vi tar oss tid för att lyssna, ställa frågor och undersöka dig för att hitta rätt behandlingsplan.</p>
+            <p className='about-text p-2'>Behandlingen kan innebära att vi hjälper dig med manuell behandling, råd och information samt rehabträning. Det kan även innebära att vi hänvisar dig till rätt vårdinstans.</p> 
+      <hr />
         
+        </div>
+        <p className='blue-text p-3 text-center'>Allt för att du ska få rätt hjälp.</p>
         <div className="row">
-          <Link to="/Naprapati" className="col-md-3 col-sm-6 mb-3 px-3 text-decoration-none">
+          <Link to="/Naprapati" className="col-md-4 col-sm-6 mb-3 px-3 text-decoration-none">
             <div className="card h-100 card-container">
               <img className="card-img-top img-fluid" src="/assets/osteopathy-patoient-getting-tretment-massage.jpg" alt="" height={160} />
               <div className="card-body">
@@ -25,7 +29,7 @@ const AboutPage = () => {
               </div>
             </div>
           </Link>
-          <Link to="/Ortopedi" className="col-md-3 col-sm-6 mb-3 px-3 text-decoration-none">
+          <Link to="/Ortopedi" className="col-md-4 col-sm-6 mb-3 px-3 text-decoration-none">
             <div className="card h-100 card-container">
               <img className="card-img-top img-fluid" src="/assets/front-view-doctor-explaining-anatomy.jpg" alt="" height={160} />
               <div className="card-body">
@@ -33,7 +37,7 @@ const AboutPage = () => {
               </div>
             </div>
           </Link>
-          <Link to="/rehab" className="col-md-3 col-sm-6 mb-3 px-3 text-decoration-none">
+          <Link to="/rehab" className="col-md-4 col-sm-6 mb-3 px-3 text-decoration-none">
             <div className="card h-100 card-container">
               <img className="card-img-top img-fluid" src="/assets/woman-doing-fitness-exercises-gym-holding-massage-foam-roller.jpg" alt="" height={180} />
               <div className="card-body">
