@@ -33,14 +33,6 @@ const AboutPage = () => {
               </div>
             </div>
           </Link>
-          <Link to="/mri" className="col-md-3 col-sm-6 mb-3 px-3 text-decoration-none">
-            <div className="card h-100 card-container">
-              <img className="card-img-top img-fluid" src="/assets/doctor-getting-patient-ready-ct-scan.jpg" alt="" height={160} />
-              <div className="card-body">
-                <h5 className="card-title text-center">MRI intygg</h5>
-              </div>
-            </div>
-          </Link>
           <Link to="/rehab" className="col-md-3 col-sm-6 mb-3 px-3 text-decoration-none">
             <div className="card h-100 card-container">
               <img className="card-img-top img-fluid" src="/assets/woman-doing-fitness-exercises-gym-holding-massage-foam-roller.jpg" alt="" height={180} />

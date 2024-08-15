@@ -6,8 +6,7 @@ import '../src/styles/index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import { Home, AboutPage, ContactPage, Cart, Checkout, PageNotFound, BookTime, MRIbookTime, CheckoutMRI, Naprapati, Ortopedi } from "./pages"
-import MRI from './pages/MRI';
+import { Home, AboutPage, ContactPage, PageNotFound, BookTime, Naprapati, Ortopedi, IntegrityPolicy } from "./pages"
 
 
 
@@ -17,16 +16,12 @@ root.render(
     <Provider store={store}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/MRI" element={<MRI />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/bookappointment" element={<BookTime />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/mri-booking" element={<MRIbookTime />} />
-        <Route path="/checkoutMRI" element={<CheckoutMRI />} />
         <Route path="/naprapati" element={<Naprapati />} />
         <Route path="/ortopedi" element={<Ortopedi />} />
+        <Route path="/bookappointment" element={<BookTime />} />
+        <Route path="/policy" element={<IntegrityPolicy />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Provider>

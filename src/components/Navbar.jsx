@@ -1,13 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import Banner from './Banner'; // Import the Banner component
 
 const Navbar = () => {
-    const servicesState = useSelector(state => state.services.services);
 
     
-    const serviceCount = servicesState.reduce((total, service) => total + service.qty, 0);
+
 
     return (
         <>
@@ -27,9 +25,6 @@ const Navbar = () => {
                                 <NavLink className="nav-link" to="/">Hem</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/MRI">MRI-services</NavLink>
-                            </li>
-                            <li className="nav-item">
                                 <NavLink className="nav-link" to="/about">Om oss</NavLink>
                             </li>
                             <li className="nav-item">
@@ -38,7 +33,6 @@ const Navbar = () => {
                         </ul>
                         <div className="buttons text-center">
                             <NavLink to="*" className="btn btn-info m-2 fs-5"><i></i>Boka tid </NavLink>
-                            <NavLink to="/cart?type=services" className=" btn btn-light m-2"><i className="fa fa-cart-shopping mr-1"></i> Varukorg ({serviceCount})</NavLink>
                         </div>
                     </div>
                 </div>

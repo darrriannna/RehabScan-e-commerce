@@ -51,11 +51,6 @@ const Slideshow = () => {
             />
             <div className="slide-text">
               <p>{slide.text}</p>
-              {idx === slides.length - 1 && (
-                <a href="pages/book-form.html" className="btn-slide">
-                  Läs mer
-                </a>
-              )}
             </div>
           </div>
         ))}

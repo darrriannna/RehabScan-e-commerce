@@ -670,6 +670,11 @@ margin-top: 5px;
   object-fit: cover;
 }
 
+.blue-text{
+  font-weight: 600;
+  font-size: 30px;
+  color: #2CA3C8;
+}
 @media (max-width: 600px) {
   .image-main {
       width: 300px;
