@@ -25,7 +25,7 @@ const AboutPage = () => {
             <div className="card h-100 card-container">
               <img className="card-img-top img-fluid" src="/assets/osteopathy-patoient-getting-tretment-massage.jpg" alt="" height={160} />
               <div className="card-body">
-                <h5 className="card-title text-center">Naprapat</h5>
+                <h5 className="card-title text-center blue-text">Naprapat</h5>
               </div>
             </div>
           </Link>
@@ -33,7 +33,7 @@ const AboutPage = () => {
             <div className="card h-100 card-container">
               <img className="card-img-top img-fluid" src="/assets/front-view-doctor-explaining-anatomy.jpg" alt="" height={160} />
               <div className="card-body">
-                <h5 className="card-title text-center">Ortoped</h5>
+                <h5 className="card-title text-center blue-text">Ortoped</h5>
               </div>
             </div>
           </Link>
@@ -41,7 +41,7 @@ const AboutPage = () => {
             <div className="card h-100 card-container">
               <img className="card-img-top img-fluid" src="/assets/woman-doing-fitness-exercises-gym-holding-massage-foam-roller.jpg" alt="" height={180} />
               <div className="card-body">
-                <h5 className="card-title text-center">Rehab</h5>
+                <h5 className="card-title text-center blue-text">Rehab</h5>
               </div>
             </div>
           </Link>
@@ -49,7 +49,7 @@ const AboutPage = () => {
 
         {/* How to Find Us Section */}
         <div className="container my-3 py-3">
-          <h2 className="text-center">Hitta hit</h2>
+          <h2 className="text-center blue-text">Hitta hit</h2>
           <hr />
           <div className="row">
             <h4 className='text-center p-3'>Vi finns på Karl Johansgatan 100, 414 55 Göteborg</h4>

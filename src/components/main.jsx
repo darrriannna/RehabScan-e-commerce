@@ -13,7 +13,7 @@ const Home = () => {
         <h3>
         På vår privata klinik i Göteborg erbjuder vi naprapati och ortopediska tjänster för att möta dina hälsobehov.</h3>
         <div className="about-link">
-          <a href="/about" className="about-anchor">
+          <a href="/About" className="about-anchor">
             Läs mer <span className="about-arrow">→</span>
           </a>
         </div>
@@ -26,7 +26,7 @@ const Home = () => {
           <div className='col treatments'>
             <h2>Har du ...</h2>
             <p>- Nacke och ryggbesvär</p>
-            <p>- Diskbråck (Ländrygg och Nacke) </p>
+            <p>- Diskbråck (Ländrygg eller Nacke) </p>
             <p>- Kronisk och oförklarlig smärta</p>
             <p>- Huvudvärk & migrän</p>
             <p>- Axel- och armbågssmärta </p>

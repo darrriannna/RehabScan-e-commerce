@@ -27,11 +27,9 @@ const Naprapati = () => {
             <li className='p-2'>Migrän, yrsel, domningar i armar och ben</li>
           </ul>
           </div>
-            <p>Nedan ser du en Naprapat i arbete och olika behandlingar vi utför här i Göteborg.</p> 
           </p>
         </div>
-        <img className="card-img-top img-fluid image-naprapat" src="/assets/osteopathy-patoient-getting-tretment-massage.jpg" alt="" height={160} />
-       
+        
         </div>
       
       <Footer />
