@@ -6,7 +6,7 @@ import '../src/styles/index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import { Home, AboutPage, ContactPage, PageNotFound, BookTime, Naprapati, Ortopedi, IntegrityPolicy } from "./pages"
+import { Home, AboutPage, ContactPage, PageNotFound, BookTime, Naprapati, Ortopedi, IntegrityPolicy, Rehab } from "./pages"
 
 
 
@@ -20,6 +20,7 @@ root.render(
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/naprapati" element={<Naprapati />} />
         <Route path="/ortopedi" element={<Ortopedi />} />
+        <Route path="/rehab" element={<Rehab />} />
         <Route path="/bookappointment" element={<BookTime />} />
         <Route path="/policy" element={<IntegrityPolicy />} />
         <Route path="*" element={<PageNotFound />} />

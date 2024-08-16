@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/index.css'; // Import your custom CSS file
+import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import Slideshow from './HomeSlide';
 
@@ -13,9 +14,9 @@ const Home = () => {
         <h3>
         På vår privata klinik i Göteborg erbjuder vi naprapati och ortopediska tjänster för att möta dina hälsobehov.</h3>
         <div className="about-link">
-          <a href="/About" className="about-anchor">
+          <Link to="/about" className='blue-small'>
             Läs mer <span className="about-arrow">→</span>
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -39,8 +40,40 @@ const Home = () => {
         </div>
       </div>
     </div>
+  
+        <p className='blue-text p-3 text-center'>BEHANDLINGAR</p>
+        <div className='container'>
+        <div className="row">
+          <Link to="/naprapati" className="col-md-4 col-sm-6 mb-3 px-3 text-decoration-none">
+            <div className="card h-100 card-container-main">
+              
+              <div className="card-body">
+                <h5 className="card-title-main text-center">Naprapat</h5>
+                <img className="icons-main" src="/assets/physiotherapist_17566176.png" alt="naprapat" />
+              </div>
+            </div>
+          </Link>
+          <Link to="/ortopedi" className="col-md-4 col-sm-6 mb-3 px-3 text-decoration-none">
+            <div className="card h-100 card-container-main">
 
+              <div className="card-body">
+                <h5 className="card-title-main text-center ">Ortoped</h5>
+                <img className="icons-main" src="/assets/back-pain_4986182.png" alt="ortoped" />
 
+              </div>
+            </div>
+          </Link>
+          <Link to="/rehab" className="col-md-4 col-sm-6 mb-3 px-3 text-decoration-none">
+            <div className="card h-100 card-container-main">
+              <div className="card-body">
+                <h5 className="card-title-main text-center ">Rehab</h5>
+                <img className="icons-main" src="/assets/healthy_7757744.png" alt="rehab" />
+
+              </div>
+            </div>
+          </Link>
+        </div>
+      </div>
       <div className='container'>
         {/* New Container Section */}
         <div className="services-container row">

@@ -7,7 +7,7 @@ const Ortopedi = () => {
     <>
       <Navbar />
       <div className="container my-3 py-3">
-        <h1 className="text-center blue-text">Ortopedi</h1>
+        <h1 className="text-center blue-text">Specialistläkare inom ortopedi och rygg kirurgi</h1>
         <hr />
         <div className="container">
           

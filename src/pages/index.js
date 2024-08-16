@@ -6,5 +6,6 @@ export { default as Naprapati } from './naprapati';
 export { default as Ortopedi } from './Ortopedi';
 export { default as BookTime } from './BookTime';
 export { default as IntegrityPolicy } from './IntegrityPolicy';
+export { default as Rehab } from './Rehab';
 
 

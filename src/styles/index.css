@@ -546,6 +546,31 @@ vertical-align: middle;
 .list-naprapat-services{
   margin: 4px;
 }
+.icons-main{
+  width: 70px;
+  display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.card-container-main{
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  /* Optional: Adds a shadow to the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #2ca4c8de;
+}
+.card-container-main .card-title-main{
+  color: rgb(8, 8, 8);
+}
+.card-container-main:hover {
+  transform: scale(1.05); /* Scales the card to 105% of its original size */
+  background-color: #f0f0f0; /* Changes background color on hover */
+
+}
+.card-container-main:hover .card-title-main{
+  color: #2CA3C8;
+}
+
 .card-container {
  
   transition: transform 0.3s ease, background-color 0.3s ease;
