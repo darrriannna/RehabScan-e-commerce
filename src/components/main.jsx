@@ -59,7 +59,6 @@ const Home = () => {
               <div className="card-body">
                 <h5 className="card-title-main text-center ">Ortoped</h5>
                 <img className="icons-main" src="/assets/back-pain_4986182.png" alt="ortoped" />
-
               </div>
             </div>
           </Link>

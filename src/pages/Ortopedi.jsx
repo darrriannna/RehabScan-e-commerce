@@ -1,5 +1,6 @@
 import React from 'react';
 import { Footer, Navbar } from "../components";
+import { Link } from 'react-router-dom';
 import '../styles/index.css';
 
 const Ortopedi = () => {
@@ -10,7 +11,7 @@ const Ortopedi = () => {
         <h1 className="text-center blue-text">Specialistläkare inom ortopedi och rygg kirurgi</h1>
         <hr />
         <div className="container">
-          
+      
           <div className='container-ortoped-services'>
           <ul className='list-ortoped-services'>
             <li className='p-2 li-ort'> <img className='icon-ortopedi' src="/assets/pain_3736120.png" alt="pain-icon" />Lider du av långvariga rygg& nackbesvär, med eller utan smärta?</li>
@@ -18,7 +19,20 @@ const Ortopedi = () => {
             <li className='p-2 li-ort'><img className='icon-ortopedi' src="/assets/health_2634148.png" alt="problem"/>Har du återkommande problem som påverkar din vardag?  </li>
             <li className='p-2 li-ort'><img className='icon-ortopedi' src="/assets/rehabilitation_9600892.png" alt="rehab"/>Vill du veta orsaken och hur du kan bli bättre?</li>
           </ul>
-          </div>
+          </div> 
+           <p className='blue-text p-3 text-center'>BEHANDLINGAR</p>
+           <div className='container container-list-beh'>
+          <ul className=' list-ort-beh'>
+            <li className='li-el-beh'> <img className='plus' src="/assets/plus-svgrepo-com.svg" alt="plus" />Erbjuder facettled och rotblockader under genomlysning.</li> 
+            <li className='li-el-beh'><img className='plus' src="/assets/plus-svgrepo-com.svg" alt="plus" />SI-ledsblock.</li>
+            <li className='li-el-beh'><img className='plus' src="/assets/plus-svgrepo-com.svg" alt="plus" />ab</li>
+            <li className='li-el-beh'><img className='plus' src="/assets/plus-svgrepo-com.svg" alt="plus" />cd</li>
+            <li className='li-el-beh'><img className='plus' src="/assets/plus-svgrepo-com.svg" alt="plus" />ef</li>
+          </ul></div>
+
+          <Link to="*" className="btn btn-info m-2 fs-5 center">
+            <i></i>Boka tid 
+          </Link>
        <p className="about-text">
         Som specialist inom ortopedi och ryggkirurgi erbjuder vi en noggrann bedömning för att identifiera källan till dina besvär. 
         Genom avancerade undersökningsmetoder och en detaljerad granskning av dina röntgenbilder, kan vi fastställa orsaken till dina problem. Med hjälp av diagnostiska blockader, 

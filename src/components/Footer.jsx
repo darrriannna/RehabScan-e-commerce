@@ -20,7 +20,16 @@ const Footer = () => {
         <p >
           <a href="mailto:info@nopainclinic.se">info@nopainclinic.se</a>
         </p>
-          </div>
+        <div>
+        
+              <a href="https://www.instagram.com/nopainclinic.goteborg/" target="_blank" rel="noopener noreferrer">
+                <img src="/assets/instagram-svgrepo-com.svg" alt="Instagram" />
+              </a>
+           <span>
+              <a className="p-3" href="https://www.facebook.com/people/No-Pain-kliniken/61564085412748/" target="_blank" rel="noopener noreferrer">
+                <img src="/assets/facebook-svgrepo-com.svg" alt="Facebook" />
+              </a></span>
+          </div></div>
           <div className="col-md-6">
             <h5>Kundservice</h5>
             <ul className="list-unstyled">

@@ -858,3 +858,26 @@ margin-top: 5px;
   padding: 2px;
   margin-right: 7px;
 }
+
+.container-list-beh{
+  background-color: #2ca4c8cc;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.list-ort-beh{
+  list-style: none;
+}
+
+.li-el-beh{
+  color: white;
+  padding-left: 6pxpx;
+
+}
+
+.plus{
+  width: 30px;
+  margin: 10px;
+  padding-right: 10px;
+}
