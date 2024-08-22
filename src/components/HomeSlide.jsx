@@ -5,7 +5,7 @@ const Slideshow = () => {
   const slides = [
     {
       src: '/assets/joyful-woman-dancing-blue-background.jpg',
-      text: 'Välkommen till oss på Göteborgs NOPainKliniken!',
+      text: 'Välkommen till oss på Göteborgs NOPainClinic!',
     },
     {
       src: '/assets/nurse-taking-care-patient.jpg',

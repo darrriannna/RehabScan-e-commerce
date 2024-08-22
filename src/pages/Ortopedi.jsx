@@ -25,22 +25,19 @@ const Ortopedi = () => {
           <ul className=' list-ort-beh'>
             <li className='li-el-beh'> <img className='plus' src="/assets/plus-svgrepo-com.svg" alt="plus" />Erbjuder facettled och rotblockader under genomlysning.</li> 
             <li className='li-el-beh'><img className='plus' src="/assets/plus-svgrepo-com.svg" alt="plus" />SI-ledsblock.</li>
-            <li className='li-el-beh'><img className='plus' src="/assets/plus-svgrepo-com.svg" alt="plus" />ab</li>
-            <li className='li-el-beh'><img className='plus' src="/assets/plus-svgrepo-com.svg" alt="plus" />cd</li>
-            <li className='li-el-beh'><img className='plus' src="/assets/plus-svgrepo-com.svg" alt="plus" />ef</li>
+            <li className='li-el-beh'><img className='plus' src="/assets/plus-svgrepo-com.svg" alt="plus" />Diagnostisera källan till smärtan.</li>
+            <li className='li-el-beh'><img className='plus' src="/assets/plus-svgrepo-com.svg" alt="plus" />Ställningstagande till operation eller konservativ behandling</li>
+            <li className='li-el-beh'><img className='plus' src="/assets/plus-svgrepo-com.svg" alt="plus" />Test blockad </li>
+            <li className='li-el-beh'><img className='plus' src="/assets/plus-svgrepo-com.svg" alt="plus" />Botox  </li>
           </ul></div>
-
-          <Link to="*" className="btn btn-info m-2 fs-5 center">
-            <i></i>Boka tid 
-          </Link>
-       <p className="about-text">
+       <p className="about-text pt-4">
         Som specialist inom ortopedi och ryggkirurgi erbjuder vi en noggrann bedömning för att identifiera källan till dina besvär. 
-        Genom avancerade undersökningsmetoder och en detaljerad granskning av dina röntgenbilder, kan vi fastställa orsaken till dina problem. Med hjälp av diagnostiska blockader, 
+        Genom avancerade undersökningsmetoder och en detaljerad granskning av dina röntgenbilder, kan vi fastställa orsaken till dina problem. <p>Med hjälp av diagnostiska blockader, 
        där lokalbedövning används, kan vi snabbt avgöra om du svarar positivt på behandlingen. Om du upplever minst 70% förbättring inom 10 minuter kan en mer långsiktig behandling erbjudas.
-        </p> 
+        </p> </p> 
         <p className='about-text'>Efter en grundlig utredning får du en individanpassad behandlingsplan, utformad för att ge dig bästa möjliga resultat och hjälpa dig att återfå din livskvalitet.
         </p>
-        <p className='about-text'>Låt oss hjälpa dig att bli fri från smärta och återgå till ett aktivt liv. </p>
+        <p className='about-text pb-4'>Låt oss hjälpa dig att bli fri från smärta och återgå till ett aktivt liv. </p>
   <div>
     <div><p className='blue-text text-center'>Boka en konsultation idag för en professionell bedömning och behandlingsplan.</p></div>
     <div></div>

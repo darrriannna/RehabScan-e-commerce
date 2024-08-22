@@ -10,7 +10,7 @@ const Home = () => {
       <Slideshow />
 
       <div className="container">
-        <h2 className="title-main">NO Pain Kliniken - vård i världsklass</h2>
+        <h2 className="title-main">NO Pain Clinic - vård i världsklass</h2>
         <h3>
         På vår privata klinik i Göteborg erbjuder vi naprapati och ortopediska tjänster för att möta dina hälsobehov.</h3>
         <div className="about-link">

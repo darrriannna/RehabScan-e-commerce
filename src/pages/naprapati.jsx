@@ -17,7 +17,7 @@ const Naprapati = () => {
 
             <p >På ren svenska kan man alltså säga att om du har besvär i kroppen så hjälper vi dig!</p>
 
-          <p className='blue-text pt-4'>På Göteborgs NoPainKliniken behandlar vi bland annat:</p>
+          <p className='blue-text pt-4'>På Göteborgs NoPainClinic behandlar vi bland annat:</p>
           <div className='container-naprapat-services'>
           <ul className='list-naprapat-services'>
             <li className='p-2'>Spänningar och värk i nacke, axlar och muskler</li>
