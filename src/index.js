@@ -5,8 +5,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../src/styles/index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './redux/store';
-import { Home, AboutPage, ContactPage, PageNotFound, BookTime, Naprapati, Ortopedi, IntegrityPolicy, Rehab } from "./pages"
+import store from './redux/store.js';
+import { Home, AboutPage, ContactPage, PageNotFound, BookTime, Naprapati, Ortopedi, IntegrityPolicy, Rehab } from "./pages/index.js"
 
 
 
