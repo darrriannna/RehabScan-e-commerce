@@ -881,3 +881,61 @@ margin-top: 5px;
   margin: 10px;
   padding-right: 10px;
 }
+
+.rehab-containers {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
+  padding: 20px; 
+  margin-top: 20px;
+  gap: 20px; /* Optional: Add space between containers */
+}
+
+.box-1 {
+  background-color: #2ca4c890;
+}
+
+.box-2 {
+  background-color: #239fc5ca;
+}
+
+.box-3 {
+  background-color: #2ca4c863;
+}
+
+.rehab-content {
+  flex: 1; 
+  text-align: center;
+  padding: 10px; 
+  max-width: 30%; 
+  box-sizing: border-box; 
+  min-height: 450px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds initial subtle shadow */
+}
+
+.rehab-content:hover {
+  background-color: white;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  transform: scale(1.05); /* Makes the container slightly larger on hover */
+}
+
+.rehab-content img {
+  width: 50%; 
+  height: auto; 
+  margin-bottom: 10px; 
+  margin-top: 10px;
+}
+
+.rehab-content p {
+  margin-top: 20px;
+  font-size: 18px; 
+  font-weight: 400;
+  color: #333; 
+}
+
+.rehab-why{
+  font-weight: 500;
+  font-size: 20px;
+}
