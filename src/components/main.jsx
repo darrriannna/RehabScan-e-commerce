@@ -97,7 +97,7 @@ const Home = () => {
                 <i className="service-icon"></i>
                 <div>
                   <h5>Läkarbesök</h5>
-                  <p> 1300 kr</p>
+                  <p> 2000 kr</p>
                 </div>
               </div>
               
