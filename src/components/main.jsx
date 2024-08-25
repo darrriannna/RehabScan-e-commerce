@@ -74,37 +74,44 @@ const Home = () => {
         </div>
       </div>
       <div className='container'>
-        {/* New Container Section */}
-        <div className="services-container row">
-          <div className="col-md-6">
-            <h2 className='title-services'>Har du en privat sjukvårdsförsäkring?</h2>
-            <div className="partners-link">
-          <a href="/partners" className="partners-anchor">
-            Partners <span className="arrow">→</span>
-          </a>
-        </div>
-          </div>
-          <div className="col-md-6">
-            <div className="services-list">
-              <div className="service-item">
-                <i className="service-icon"></i>
-                <div>
-                  <h5>Naprapatbesök</h5>
-                  <p>Naprapatbehandling 750kr</p>
-                </div>
-              </div>
-              <div className="service-item">
-                <i className="service-icon"></i>
-                <div>
-                  <h5>Läkarbesök</h5>
-                  <p> 2000 kr</p>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-        </div>
+  {/* New Container Section */}
+  <div className="services-container row">
+    <div className="col-md-5">
+      <h2 className='title-services'>Har du en privat sjukvårdsförsäkring?</h2>
+      <div className="partners-link">
+        <a href="/partners" className="partners-anchor">
+          Partners <span className="arrow">→</span>
+        </a>
       </div>
+    </div>
+
+    <div className="col-md-7">
+      <div className="services-list">
+      <div className="service-item">
+  <i className="service-icon"></i>
+  <div className="service-item-content">
+    <h5>Legitimerad Naprapat</h5>
+    <p></p>
+  </div>
+  <div className="services-price">750kr</div>
+</div>
+
+
+        <div className="service-item">
+  <i className="service-icon"></i>
+  <div className="service-item-content">
+    <h5>Ortoped specialist Läkare</h5>
+    <p>Masoud Sorkhabi</p>
+  </div>
+  <div className="services-price">2000kr</div>
+</div>
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
     </div>
   );
 };

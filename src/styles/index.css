@@ -651,24 +651,36 @@ margin-top: 5px;
 
 .service-item {
   display: flex;
-  align-items: center;
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space between service description and price */
   gap: 10px;
+  padding: 10px 0; /* Add padding for better spacing */
 }
 
 .service-icon {
   font-size: 2rem;
 }
 
-.service-item h5 {
-  font-size: 1.2rem;
-  margin-top: 5px;
-  margin-bottom: 5px;
+.service-item h5,
+.service-item p {
+  margin: 0; /* Remove default margins */
+  line-height: 1.5; /* Ensure consistent line height */
 }
 
-.service-item p {
-  margin: 0;
-  font-size: 1rem;
-  color: #555;
+.service-item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Ensure vertical centering within this column */
+}
+
+.services-price {
+  font-size: 1.2rem;
+  text-align: right; /* Align prices to the right */
+  font-weight: 500;
+
+  margin: 0; /* Remove default margins */
+  margin-right: 30px;
+  align-self: center; /* Align price vertically in the center */
 }
 
 @media (min-width: 768px) {
@@ -685,13 +697,21 @@ margin-top: 5px;
   .services-list {
     flex-direction: column;
   }
+
+  .service-item {
+    flex-direction: row; /* Ensure items are in a row on larger screens */
+  }
+
+  .services-price {
+    margin-left: auto; /* Push price column to the right */
+    align-self: center; /* Ensure vertical alignment with the item text */
+  }
 }
 
 .partners-link {
   margin-top: 20px;
   text-align: left;
 }
-
 
 .partners-anchor {
   font-size: 1.1rem;
@@ -703,10 +723,11 @@ margin-top: 5px;
   position: relative;
 }
 
-.partners-anchor:hover .arrow:hover{
+.partners-anchor:hover .arrow:hover {
   transform: translateX(5px);
   color: #ffffff;
 }
+
 
 
 .arrow {
