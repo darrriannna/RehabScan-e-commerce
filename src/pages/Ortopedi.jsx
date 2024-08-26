@@ -38,11 +38,35 @@ const Ortopedi = () => {
         </p>
         <p className='about-text pb-4'>Låt oss hjälpa dig att bli fri från smärta och återgå till ett aktivt liv. </p>
   <div>
-    <div><p className='blue-text text-center'>Boka en konsultation idag för en professionell bedömning och behandlingsplan.</p></div>
     <div></div>
   </div>
+  <div className="masoud-cv">
+    <img src="/assets/Masoud-img.jpeg" alt="cv img" />
+    <div className="text-content">
+        <h2>Dr Masoud Sorkhabi</h2>
+        <h5 className="italic">Specialistläkare inom ortopedi och rygg kirurgi</h5>
+        <a className='link' href="mailto:drsorkhabi@nopainclinic.se">drsorkhabi@nopainclinic.se</a>
+        <div>
+            <h5 className="bold pt-4">Utbildning</h5> 
+            <p className='bold'>Göteborgs Universitet</p>
+            <p className="italic">läkarlinjen 1989 - 1995</p>
+        </div>
+        <div>
+            <h5 className="bold">Tidigare uppdrag</h5>
+            <p className="bold">Sahlgrenska ryggsektionen</p>
+            <p className='italic'>fellowship ryggsektionen 2008-2009.</p>
+            <p className="bold">Boras lasarett</p>
+            <p className='italic'>Överläkare tjänst 2005. ST- ortopedi 1999-2002:Specialist.</p>
+            <p className='italic'>Ortoped examen 2003 Bakjour barn o vuxenortopedi.</p>
+            <p className="bold">Sundsvall sjukhus</p>
+            <p className='italic'>2 ar ST-Ortopeden 1997-1999, AT- läkare 1995-1997.</p>
+        </div>
+    </div>
+</div>
 
         </div>
+        <div><p className='blue-text text-center'>Boka en konsultation idag för en professionell bedömning och behandlingsplan.</p></div>
+
       
         </div>
       

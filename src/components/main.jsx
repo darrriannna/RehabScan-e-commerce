@@ -14,7 +14,7 @@ const Home = () => {
         <h3>
         På vår privata klinik i Göteborg erbjuder vi naprapati och ortopediska tjänster för att möta dina hälsobehov.</h3>
         <div className="about-link">
-          <Link to="/about" className='blue-small'>
+          <Link to="/about" className='bold link'>
             Läs mer <span className="about-arrow">→</span>
           </Link>
         </div>
