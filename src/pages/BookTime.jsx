@@ -1,6 +1,6 @@
 import React from 'react';
 import { Footer, Navbar } from '../components';
-import '../styles/bookform.css';
+import '../styles/index.css';
 
 const BookTime = () => {
   return (
