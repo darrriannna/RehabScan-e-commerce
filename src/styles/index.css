@@ -110,241 +110,7 @@
   margin-left: 30px;
 }
 
-.image-front {
-  width: 100%;
-  height: auto;
-}
 
-.circle-animation {
-  position: absolute;
-  max-width: 30px; /* Adjust as needed */
-  max-height: 30px; /* Adjust as needed */
-  background-color: rgba(228, 236, 241, 0.414);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  animation: expanding 2s linear infinite;
-  cursor: pointer; /* Change cursor to pointer to indicate interactivity */
-  z-index: 1;
-}
-
-.circle-animation:hover{
-  z-index: 3;
-}
-.circle-animation:hover .pop-up {
-  display: block; /* Show the pop-up on hover */
-
-}
-
-.pop-up {
-  display: none; /* Hide the pop-up by default */
-  position: absolute;
-  top: -50px; /* Adjust as needed */
-  left: 55%; /* Adjust as needed */
-  transform: translateX(-50%);
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 5px;
-  font-size: 10px;
-  font-weight: 700px;
-  width: 170px;
-  max-height: 100px;
-  border-radius: 4px;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 4;
-}
-
-.animation-button{
-padding: none;
-align-self: center;
-font-size: 14px;
-vertical-align: middle; 
-}
-
-.animation-text{
-  font-weight: 700;
-  font-size: 14px;
- 
-}
-
-@keyframes expanding {
-  0% {
-    width: 30px;
-    height: 30px;
-    border: 3px solid rgb(129, 182, 236);
-    z-index: 2;
-  }
-  50% {
-    width: 30px;
-    height: 30px;
-    border: 7px solid rgb(129, 182, 236);
-    z-index: 2;
-  }
-  100% {
-    width: 30px;
-    height: 30px;
-    border: 3px solid rgb(129, 182, 236);
-    z-index: 2;
-  }
-}
-
-/* Specific positions for each circle */
-.circle-animation1 { top: 25%; left: 22%; z-index: 2;}
-.circle-animation2 { top: 25%; left: 40%; z-index: 2;}
-.circle-animation3 { top: 50%; left: 31%; z-index: 2;}
-.circle-animation4 { top: 45%; left: 26%; z-index: 2;}
-.circle-animation5 { top: 45%; left: 36%; z-index: 2;}
-.circle-animation6 { top: 53%; left: 44%; z-index: 2;}
-.circle-animation7 { top: 53%; left: 18%; z-index: 2;}
-.circle-animation8 { top: 69%; left: 28%; z-index: 2;}
-.circle-animation9 { top: 69%; left: 34%; z-index: 2;}
-.circle-animation10 { top: 84%; left: 28%; z-index: 2;}
-.circle-animation11 { top: 84%; left: 33%; z-index: 2;}
-.circle-animation12 { top: 42%; left: 78%; z-index: 2;}
-.circle-animation13 { top: 25%; left: 68%; z-index: 2;}
-.circle-animation14 { top: 38%; left: 68%; z-index: 2;}
-.circle-animation15 { top: 48%; left: 68%; z-index: 2;}
-.circle-animation16 { top: 42%; left: 57%; z-index: 2;}
-
-.mr-services-list {
-  width: 100%;
-  padding: 10px;
-  max-width: 500px; /* Adjust as needed */
-  margin-top: 20px; /* Adjust as needed */
-  overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
-  list-style: none;
-  align-items: center;
-}
-
-.mr-services-list.collapsed {
-  max-height: 0;
-}
-
-.mr-services-list.expanded {
-  max-height: 2400px; /* Adjust as needed to fit content */
-}
-
-.toggle-button {
-  background: none;
-  border: none;
-  font-size: 20px;
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  margin: auto;
-  color: rgb(59, 60, 60);
-}
-
-.mr-service-container {
-  width: 100%;
-  border: 2px solid #333;
-  border-radius: 10px;
-  margin: 10px 0;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.arrow {
-  transition: transform 0.3s ease;
-}
-
-.arrow.collapsed {
-  transform: rotate(0deg);
-}
-
-.arrow.expanded {
-  transform: rotate(180deg);
-}
-
-.btn-primary {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  margin-top: 10px;
-}
-
-.mr-price {
-  margin-top: 10px;
-  font-weight: 500;
-}
-
-@media (min-width: 600px) {
-  .mr-service-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .mr-service-container p,
-  .mr-service-container .btn-primary,
-  .mr-service-container .mr-price {
-    margin: 0 10px;
-  }
-}
-
-@media (max-width: 500px) {
-  .mr-service-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .mr-service-container p,
-  .mr-service-container .btn-primary,
-  .mr-service-container .mr-price {
-    margin: 0 10px;
-  }
-  .circle-animation1 { top: 30%; left: 24%;  z-index: 2}
-.circle-animation2 { top: 30%; left: 41%;  z-index: 2}
-.circle-animation3 { top: 50%; left: 33%;  z-index: 2}
-.circle-animation4 { top: 45%; left: 28%;  z-index: 2}
-.circle-animation5 { top: 45%; left: 37%;  z-index: 2}
-.circle-animation6 { top: 53%; left: 44%;  z-index: 2}
-.circle-animation7 { top: 53%; left: 21%;  z-index: 2}
-.circle-animation8 { top: 69%; left: 30%;  z-index: 2}
-.circle-animation9 { top: 69%; left: 36%;  z-index: 2}
-.circle-animation10 { top: 82%; left: 31%;  z-index: 2}
-.circle-animation11 { top: 82%; left: 35%;  z-index: 2}
-.circle-animation12 { top: 42%; left: 76%; z-index: 2;}
-.circle-animation13 { top: 25%; left: 66%; z-index: 2;}
-.circle-animation14 { top: 36%; left: 66%; z-index: 2;}
-.circle-animation15 { top: 48%; left: 66%; z-index: 2;}
-.circle-animation16 { top: 42%; left: 57%; z-index: 2;}
-
-.circle-animation{
-  max-width: 20px;
-  max-height: 20px;
-}
-
-@keyframes expanding {
-  0% {
-    width: 15px;
-    height: 15px;
-    border: 2px solid rgb(129, 182, 236);
-  }
-  50% {
-    width: 15px;
-    height: 15px;
-    border: 5px solid rgb(129, 182, 236);
-  }
-  100% {
-    width: 15px;
-    height: 15px;
-    border: 2px solid rgb(129, 182, 236);
-  }
-}
-.banner-text{
-  font-size: 16px;
-  animation: fade-in-out 3s infinite;
-}
-}
 
 .phone{
   display: flex;
@@ -631,6 +397,8 @@ margin-top: 5px;
   font-weight: 600;
   padding-bottom: 10px;
 }
+
+/* Base styling for the service items */
 .services-container {
   background-color: #2ca4c88f;
   padding: 20px;
@@ -646,7 +414,7 @@ margin-top: 5px;
 
 .services-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Default to column layout */
   gap: 15px;
 }
 
@@ -662,29 +430,41 @@ margin-top: 5px;
   font-size: 2rem;
 }
 
-.service-item h5,
-.service-item p {
-  margin: 0; /* Remove default margins */
-  line-height: 1.5; /* Ensure consistent line height */
-}
-
 .service-item-content {
   display: flex;
   flex-direction: column;
   justify-content: center; /* Ensure vertical centering within this column */
 }
 
-.services-price {
-  font-size: 1.2rem;
-  text-align: right; /* Align prices to the right */
-  font-weight: 500;
-
+.service-item h5,
+.service-item p {
   margin: 0; /* Remove default margins */
-  margin-right: 30px;
-  align-self: center; /* Align price vertically in the center */
+  line-height: 1.5; /* Ensure consistent line height */
 }
 
-@media (min-width: 768px) {
+.services-price {
+  font-size: 1.2rem;
+  text-align: right; /* Default alignment for larger screens */
+  font-weight: 500;
+  margin: 0; /* Remove default margins */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 799px) {
+  .service-item {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .services-price {
+    margin-top: 5px; /* Add margin on top to separate price from service description */
+    text-align: left; /* Align price text to the left */
+    margin-right: 0; /* Remove right margin */
+  }
+}
+
+/* Media query for larger screens */
+@media (min-width: 800px) {
   .services-container {
     display: flex;
     justify-content: space-between;
@@ -696,16 +476,17 @@ margin-top: 5px;
   }
 
   .services-list {
-    flex-direction: column;
+    flex-direction: column; /* Keep column layout */
   }
 
   .service-item {
-    flex-direction: row; /* Ensure items are in a row on larger screens */
+    flex-direction: row; /* Align items in a row */
+    justify-content: space-between; /* Space out the content */
   }
 
   .services-price {
     margin-left: auto; /* Push price column to the right */
-    align-self: center; /* Ensure vertical alignment with the item text */
+    text-align: right; /* Align prices to the right */
   }
 }
 
@@ -729,14 +510,13 @@ margin-top: 5px;
   color: #ffffff;
 }
 
-
-
 .arrow {
   display: inline-block;
   color: #000;
   margin-left: 5px;
   transition: transform 0.3s ease;
 }
+
 
 .about-link {
   margin-top: 20px;
@@ -796,7 +576,7 @@ margin-top: 5px;
 }
 @media (max-width: 600px) {
   .image-main {
-      width: 300px;
+      max-width: 300px;
       margin: 0 auto;
       display: block;
   }
@@ -850,7 +630,8 @@ margin-top: 5px;
   }
 
   .image-main {
-    max-width: 100%;
+    max-width: 300px;
+    max-height: 200px;
     margin-bottom: 20px;
   }
 
