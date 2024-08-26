@@ -1,26 +1,27 @@
 .banner {
-    background-color: #ffffff; /* Light grey background */
-    color: #333; /* Dark text color */
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 1050; /* Ensure it's above other elements */
+  background-color: #ffffff; /* Light grey background */
+  color: #333; /* Dark text color */
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1050; /* Ensure it's above other elements */
 }
 
 .banner-text {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #2CA3C8;
-    animation: fade-in-out 3s infinite;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #2CA3C8;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Smooth transition */
 }
 
-@keyframes fade-in-out {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 1; }
+.banner-text.show {
+  opacity: 1;
 }
+
 /* Navbar.css */
 .logo-nav{
   height: 80px;
