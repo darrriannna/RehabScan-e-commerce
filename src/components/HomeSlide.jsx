@@ -3,21 +3,12 @@ import '../styles/index.css'; // Ensure this path is correct
 
 const Slideshow = () => {
   const slides = [
-    {
-      src: '/assets/joyful-woman-dancing-blue-background.jpg',
-      text: 'Välkommen till oss på Göteborgs NOPainClinic!',
-    },
-    {
-      src: '/assets/nurse-taking-care-patient.jpg',
-      text: 'Vi har den bästa specialisten inom naprapati och ortopedi.',
-    },
-    {
-      src: '/assets/closeup-medical-technician-starting-mri-scan-examination-patient-hospital.jpg',
-      text: 'Vi erbjuder undersökningar med magnetkamera på ett snabbt och enkelt sätt.',
-    }
+    'Välkommen till oss på Göteborgs NOPainClinic!',
+    'Vi har den bästa specialisten inom naprapati och ortopedi.',
+    'Vi erbjuder undersökningar med magnetkamera på ett snabbt och enkelt sätt.',
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0); // Start at the first slide
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const goToPrevious = () => {
@@ -25,7 +16,7 @@ const Slideshow = () => {
     setTimeout(() => {
       setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
       setIsTransitioning(false);
-    }, 1000); // Duration of the fade transition
+    }, 500); // Shorter fade duration for smoother effect
   };
 
   const goToNext = () => {
@@ -33,27 +24,17 @@ const Slideshow = () => {
     setTimeout(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
       setIsTransitioning(false);
-    }, 1000); // Duration of the fade transition
+    }, 500); // Shorter fade duration for smoother effect
   };
 
   return (
     <div className="slideshow">
       <div className="slideshow-wrapper">
-        {slides.map((slide, idx) => (
-          <div
-            key={idx}
-            className={`slide ${currentIndex === idx ? 'active' : ''} ${isTransitioning ? 'fade-out' : 'fade-in'}`}
-          >
-            <img
-              src={slide.src}
-              className="slideshow-image"
-              alt={`Slide ${idx + 1}`}
-            />
-            <div className="slide-text">
-              <p>{slide.text}</p>
-            </div>
+        <div className={`slide ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+          <div className="slide-text">
+            <p>{slides[currentIndex]}</p>
           </div>
-        ))}
+        </div>
         <button className="slideshow-control prev" onClick={goToPrevious}>&#10094;</button>
         <button className="slideshow-control next" onClick={goToNext}>&#10095;</button>
       </div>
@@ -67,7 +48,7 @@ const Slideshow = () => {
               setTimeout(() => {
                 setCurrentIndex(idx);
                 setIsTransitioning(false);
-              }, 1000); // Duration of the fade transition
+              }, 500); // Shorter fade duration for smoother effect
             }}
           ></span>
         ))}
@@ -77,3 +58,6 @@ const Slideshow = () => {
 };
 
 export default Slideshow;
+
+
+

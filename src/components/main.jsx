@@ -11,7 +11,7 @@ const Home = () => {
 
       <div className="container">
         <h2 className="title-main">NO Pain Clinic - vård i världsklass</h2>
-        <h3>
+        <h3 className='sub-text'>
         På vår privata klinik i Göteborg erbjuder vi naprapati och ortopediska tjänster för att möta dina hälsobehov.</h3>
         <div className="about-link">
           <Link to="/about" className='bold link'>
@@ -26,12 +26,12 @@ const Home = () => {
         <div className='content-right'>
           <div className='col treatments'>
             <h2>Har du ...</h2>
-            <p>- Nacke och ryggbesvär</p>
-            <p>- Diskbråck (Ländrygg eller Nacke) </p>
-            <p>- Kronisk och oförklarlig smärta</p>
-            <p>- Huvudvärk & migrän</p>
-            <p>- Axel- och armbågssmärta </p>
-            <p>- Höft/bäcken/knä smärta</p>
+            <p className='simple-text'>- Nacke och ryggbesvär</p>
+            <p className='simple-text'>- Diskbråck (Ländrygg eller Nacke) </p>
+            <p className='simple-text'>- Kronisk och oförklarlig smärta</p>
+            <p className='simple-text'>- Huvudvärk & migrän</p>
+            <p className='simple-text'>- Axel- och armbågssmärta </p>
+            <p className='simple-text'>- Höft/bäcken/knä smärta</p>
             <h2>?</h2>
           </div>
           <NavLink to="*" className="btn btn-info m-2 fs-5">
@@ -75,8 +75,8 @@ const Home = () => {
       </div>
       <div className='container'>
   {/* New Container Section */}
-  <div className="services-container row">
-    <div className="col-md-5">
+  <div className="services-container">
+    <div className="service-header">
       <h2 className='title-services'>Har du en privat sjukvårdsförsäkring?</h2>
       <div className="partners-link">
         <a href="/partners" className="partners-anchor">
@@ -85,32 +85,28 @@ const Home = () => {
       </div>
     </div>
 
-    <div className="col-md-7">
-      <div className="services-list">
+    <div className="services-list">
       <div className="service-item">
-  <i className="service-icon"></i>
-  <div className="service-item-content">
-    <h5>Legitimerad Naprapat</h5>
-    <p></p>
-  </div>
-  <div className="services-price">750kr</div>
-</div>
+        <i className="service-icon"></i>
+        <div className="service-item-content">
+          <h5>Legitimerad Naprapat</h5>
+          <p></p>
+        </div>
+        <div className="services-price">750kr</div>
+      </div>
 
-
-        <div className="service-item">
-  <i className="service-icon"></i>
-  <div className="service-item-content">
-    <h5>Ortoped specialist Läkare</h5>
-    <p>Masoud Sorkhabi</p>
-  </div>
-  <div className="services-price">2000kr</div>
-</div>
-
-        
+      <div className="service-item">
+        <i className="service-icon"></i>
+        <div className="service-item-content">
+          <h5>Ortoped specialist Läkare</h5>
+          <p>Masoud Sorkhabi</p>
+        </div>
+        <div className="services-price">2000kr</div>
       </div>
     </div>
   </div>
 </div>
+
 
     </div>
   );

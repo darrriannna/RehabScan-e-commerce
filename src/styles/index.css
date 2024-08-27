@@ -11,7 +11,7 @@
 }
 
 .banner-text {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: #2CA3C8;
   opacity: 0;
@@ -182,6 +182,20 @@
   text-decoration: underline;
   
 }
+
+@media (max-width: 801px){
+  .footer h5 {
+    font-size: 18px;
+    margin-bottom: 1.4rem;
+    margin-top: 1rem;
+  }
+  .footer ul {
+    padding: 2px;
+    list-style: none;
+  }
+ 
+
+}
 .slideshow {
   position: relative;
   max-width: 100%;
@@ -191,74 +205,58 @@
 .slideshow-wrapper {
   position: relative;
   width: 100%;
-  height: 500px; /* Adjust as necessary */
+  height: 500px; /* Keep this height */
   overflow: hidden;
+  background-image: url('/assets/nurse-taking-care-patient.jpg'); /* Use the second image as background */
+  background-size: cover;
+  background-position: center;
 }
 
 .slide {
   position: absolute;
   width: 100%;
   height: 100%;
-  transition: opacity 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease-in-out; /* Smooth transition */
   opacity: 0;
 }
 
-.slide.active {
+.slide.fade-in {
   opacity: 1;
 }
 
-.slideshow-image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 1s ease-in-out;
+.slide.fade-out {
+  opacity: 0;
 }
 
 .slide-text {
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   color: white;
   background-color: rgba(17, 131, 146, 0.79);
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-  min-width: 100%;
 }
 
 .slide-text p {
-  margin: 0 0 10px;
+  margin: 0;
   font-size: 36px;
+  padding: 20px;
   font-weight: 600;
-}
-
-.btn-slide {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  color: white;
-  background-color: #2CA3C8; /* Button color */
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 20px;
-}
-
-.btn-slide:hover {
-  background-color: #0d6a7f; /* Darker button color on hover */
 }
 
 .slideshow-control {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: transparent; /* Removed the background */
   color: white;
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 1000;
+  font-size: 30px; /* Make the buttons larger */
+  z-index: 1001; /* Ensure buttons are on top */
 }
 
 .slideshow-control.prev {
@@ -272,6 +270,7 @@
 .slideshow-dots {
   text-align: center;
   padding: 10px;
+  z-index: 1001; /* Ensure dots are on top */
 }
 
 .dot {
@@ -287,6 +286,14 @@
 .dot.active {
   background-color: #717171;
 }
+
+@media (max-width: 801px) {
+  .slide-text p{
+    font-size: 30px;
+  }
+}
+
+
 
 .about-text{
   font-size: 20px;
@@ -447,6 +454,7 @@ margin-top: 5px;
   text-align: right; /* Default alignment for larger screens */
   font-weight: 500;
   margin: 0; /* Remove default margins */
+  padding: 8px;
 }
 
 /* Media query for smaller screens */
@@ -461,6 +469,18 @@ margin-top: 5px;
     text-align: left; /* Align price text to the left */
     margin-right: 0; /* Remove right margin */
   }
+  .title-main{
+    font-size: 24px;
+  }
+  .sub-text{
+    font-size: 20px;
+    font-weight: 400;
+  } 
+  .simple-text{
+    font-size: 18px;
+  }
+
+
 }
 
 /* Media query for larger screens */
@@ -488,6 +508,7 @@ margin-top: 5px;
     margin-left: auto; /* Push price column to the right */
     text-align: right; /* Align prices to the right */
   }
+ 
 }
 
 .partners-link {
@@ -675,7 +696,8 @@ margin-top: 5px;
 
 .li-el-beh{
   color: white;
-  padding-left: 6pxpx;
+  font-size: 20px;
+  padding-left: 6px;
 
 }
 
@@ -768,7 +790,22 @@ margin-top: 5px;
 .italic {
   font-style: italic;
 }
+@media (max-width: 600px) {
+  .masoud-cv {
+    flex-direction: column; /* Stack the image and text vertically */
+    align-items: left; /* Center align items in the column */
+  }
 
+  .masoud-cv img {
+    max-width: 100%; /* Make the image responsive */
+    margin-bottom: 20px; /* Add space between the image and text */
+  }
+
+  .text-content {
+    max-width: 100%; /* Allow the text content to take full width */
+    text-align: left; /* Optional: Center-align the text */
+  }
+} 
 .link{
   color: #000;
   text-decoration: none;
