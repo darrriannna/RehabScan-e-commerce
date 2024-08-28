@@ -15,7 +15,7 @@ const Navbar = () => {
                     
                     {/* Boka tid button for small screens */}
                     <div className="d-lg-none bokatid-wrapper">
-                        <NavLink to="*" className="btn btn-info bokatid-button"><i></i>Boka tid</NavLink>
+                        <NavLink to="https://nopainclinic.bestille.no/OnCust2/#!/" className="btn btn-info bokatid-button"><i></i>Boka tid</NavLink>
                     </div>
                     
                     <button className="navbar-toggler mx-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

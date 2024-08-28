@@ -34,7 +34,7 @@ const Home = () => {
             <p className='simple-text'>- Höft/bäcken/knä smärta</p>
             <h2>?</h2>
           </div>
-          <NavLink to="*" className="btn btn-info m-2 fs-5">
+          <NavLink to="https://nopainclinic.bestille.no/OnCust2/#!/" className="btn btn-info m-2 fs-5">
             <i></i>Boka tid 
           </NavLink>
         </div>
