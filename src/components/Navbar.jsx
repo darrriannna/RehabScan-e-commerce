@@ -41,7 +41,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                         <div className="buttons text-center d-none d-lg-block">
-                            <NavLink to="*" className="btn btn-info m-2 fs-5"><i></i>Boka tid</NavLink>
+                            <NavLink to="https://nopainclinic.bestille.no/OnCust2/#!/" className="btn btn-info m-2 fs-5"><i></i>Boka tid</NavLink>
                         </div>
                     </div>
                 </div>
