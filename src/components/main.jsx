@@ -32,7 +32,6 @@ const Home = () => {
             <p className='simple-text'>- Huvudvärk & migrän</p>
             <p className='simple-text'>- Axel- och armbågssmärta </p>
             <p className='simple-text'>- Höft/bäcken/knä smärta</p>
-            <h2>?</h2>
           </div>
           <NavLink to="https://nopainclinic.bestille.no/OnCust2/#!/" className="btn btn-info m-2 fs-5">
             <i></i>Boka tid 

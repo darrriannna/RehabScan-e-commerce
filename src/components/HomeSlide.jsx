@@ -3,9 +3,8 @@ import '../styles/index.css'; // Ensure this path is correct
 
 const Slideshow = () => {
   const slides = [
-    'Välkommen till oss på Göteborgs NOPainClinic!',
+    'Välkommen till oss på Göteborgs NoPainClinic!',
     'Vi har den bästa specialisten inom naprapati och ortopedi.',
-    'Vi erbjuder undersökningar med magnetkamera på ett snabbt och enkelt sätt.',
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0); // Start at the first slide

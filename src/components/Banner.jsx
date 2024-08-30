@@ -5,9 +5,7 @@ const Banner = () => {
     const messages = [
         "Legitimerad naprapat",
         "Specialistläkare inom ortopedi och rygg kirurgi",
-        "Boka tid på hemsidan eller ringa 070-582 21 42",
-        "MR utan remiss",
-        "7-12 dagar väntetid på MR",
+        "Boka tid på hemsidan eller ringa 070-582 21 42"
     ];
 
     const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
