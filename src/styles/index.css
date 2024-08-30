@@ -818,3 +818,24 @@ margin-top: 5px;
   color: #2CA3C8;
 
 }
+
+.reviews-carousel {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.review-card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-card p {
+  margin: 0;
+  font-size: 16px;
+}
