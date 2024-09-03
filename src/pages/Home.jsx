@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Navbar, Main, Footer, ReviewCarousel } from "../components";
+import { Navbar, Main, Footer, ReviewCarousel, SpecialistSection } from "../components";
 
 function Home() {
   return (
@@ -8,6 +8,7 @@ function Home() {
       <Navbar />
       <Main />
       <ReviewCarousel/>
+      <SpecialistSection/>
       <Footer />
     </>
   )

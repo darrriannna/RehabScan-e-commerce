@@ -839,3 +839,118 @@ margin-top: 5px;
   margin: 0;
   font-size: 16px;
 }
+.specialist-section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.specialist-section h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #2CA3C8;
+}
+
+.specialist-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.specialist-card {
+  width: 350px;
+  height: 550px;
+  perspective: 1000px; /* For the 3D effect */
+  margin: 10px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.specialist-card:hover .card-inner {
+  transform: rotateY(180deg); /* Flip the card on hover */
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+  background-color: #fff;
+  color: #333;
+}
+
+.card-back {
+  background-color: #2ca4c8bd;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.specialist-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 2px solid #2CA3C8;
+  margin-bottom: 15px;
+}
+
+.card-front h3 {
+  font-size: 24px;
+  margin: 15px 0 5px;
+  color: #2ca4c8c5;
+}
+
+.card-front p {
+  font-size: 18px;
+  color: #555;
+}
+
+.card-back p {
+  font-size: 16px;
+}
+.specialist-services-list {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
+  margin: 20px 0 0 0;
+  text-align: left; /* Left-align text for readability */
+}
+
+.specialist-services-item {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #ffffff; /* Text color */
+  background-color: rgba(0, 102, 128, 0.8); /* Slightly transparent background */
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.specialist-services-item .plus {
+  width: 18px; /* Icon size */
+  height: 18px;
+  margin-right: 10px;
+}
+
+.specialist-services-item:hover {
+  background-color: #0d6a7f; /* Change background on hover */
+}
