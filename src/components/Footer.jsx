@@ -18,7 +18,7 @@ const Footer = () => {
             <p >Karl Johansgatan 100, 414 55 Göteborg</p>
         <p>070-582 21 42</p>
         <p >
-          <a className="link" href="mailto:info@nopainclinic.se">info@nopainclinic.se</a>
+          <a className="link" href="mailto:drsorkhabi@nopainclinic.se">drsorkhabi@nopainclinic.se</a>
         </p>
         <div>
         

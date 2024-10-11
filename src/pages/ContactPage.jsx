@@ -12,7 +12,7 @@ const ContactPage = () => {
         <p className="text-center">Karl Johansgatan 100, 414 55 Göteborg</p>
         <p className="text-center">070-582 21 42</p>
         <p className="text-center">
-          <a href="mailto:info@nopainclinic.se">info@nopainclinic.se</a>
+          <a href="mailto:drsorkhabi@nopainclinic.se">drsorkhabi@nopainclinic.se</a>
         </p>
         <p className="mx-auto text-center">
           Tidsbokning gör du själv här på hemsidan eller ringer. Tala gärna in

@@ -116,6 +116,7 @@ body{
   color: #fff;
   background-color: #0982A8;
   height: 48px;
+  text-decoration: none;
   :hover{
       transform: scale(1.04);
       background-color: #0982A8;
