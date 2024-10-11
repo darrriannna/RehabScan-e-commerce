@@ -3,7 +3,6 @@ import '../styles/index.css'; // Import the CSS file
 
 const Banner = () => {
     const messages = [
-        "Legitimerad naprapat",
         "Specialistläkare inom ortopedi och rygg kirurgi",
         "Boka tid på hemsidan eller ringa 070-582 21 42"
     ];

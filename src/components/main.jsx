@@ -2,17 +2,18 @@ import React from 'react';
 import '../styles/index.css'; // Import your custom CSS file
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-import Slideshow from './HomeSlide';
+
 
 const Home = () => {
   return (
     <div className="main">
-      <Slideshow />
-
-      <div className="container">
+ <div>
+  <img className='banner-home' src="assets/Banner-home.png" alt="" />
+ </div>
+      <div className="container container-home-link">
         <h2 className="title-main">NO Pain Clinic - vård i världsklass</h2>
         <h3 className='sub-text'>
-        På vår privata klinik i Göteborg erbjuder vi naprapati och ortopediska tjänster för att möta dina hälsobehov.</h3>
+        På vår privata klinik i Göteborg erbjuder vi ortopediska tjänster för att möta dina hälsobehov.</h3>
         <div className="about-link">
           <Link to="/about" className='bold link'>
             Läs mer <span className="about-arrow">→</span>
@@ -40,59 +41,18 @@ const Home = () => {
       </div>
     </div>
   
-        <p className='blue-text p-3 text-center'>BEHANDLINGAR</p>
-        <div className='container'>
-        <div className="row">
-          <Link to="/naprapati" className="col-md-4 col-sm-6 mb-3 px-3 text-decoration-none">
-            <div className="card h-100 card-container-main">
-              
-              <div className="card-body">
-                <h5 className="card-title-main text-center">Naprapat</h5>
-                <img className="icons-main" src="/assets/physiotherapist_17566176.png" alt="naprapat" />
-              </div>
-            </div>
-          </Link>
-          <Link to="/ortopedi" className="col-md-4 col-sm-6 mb-3 px-3 text-decoration-none">
-            <div className="card h-100 card-container-main">
 
-              <div className="card-body">
-                <h5 className="card-title-main text-center ">Ortoped</h5>
-                <img className="icons-main" src="/assets/back-pain_4986182.png" alt="ortoped" />
-              </div>
-            </div>
-          </Link>
-          <Link to="/rehab" className="col-md-4 col-sm-6 mb-3 px-3 text-decoration-none">
-            <div className="card h-100 card-container-main">
-              <div className="card-body">
-                <h5 className="card-title-main text-center ">Rehab</h5>
-                <img className="icons-main" src="/assets/healthy_7757744.png" alt="rehab" />
-
-              </div>
-            </div>
-          </Link>
-        </div>
-      </div>
       <div className='container'>
   {/* New Container Section */}
   <div className="services-container">
     <div className="service-header">
-      <h2 className='title-services'>Har du en privat sjukvårdsförsäkring?</h2>
+      <h5 className='fw-bold '>Har du en privat sjukvårdsförsäkring?</h5>
       <div className="partners-link">
         <a href="/partners" className="partners-anchor">
           Partners <span className="arrow">→</span>
         </a>
       </div>
     </div>
-
-    <div className="services-list">
-      <div className="service-item">
-        <i className="service-icon"></i>
-        <div className="service-item-content">
-          <h5>Legitimerad Naprapat</h5>
-          <p></p>
-        </div>
-        <div className="services-price">750kr</div>
-      </div>
 
       <div className="service-item">
         <i className="service-icon"></i>
@@ -107,7 +67,7 @@ const Home = () => {
 </div>
 
 
-    </div>
+
   );
 };
 

@@ -34,14 +34,11 @@ const Navbar = () => {
                                 <NavLink className="nav-link" to="/ortopedi">Ortopedi</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/naprapati">Naprapati</NavLink>
-                            </li>
-                            <li className="nav-item">
                                 <NavLink className="nav-link" to="/contact">Kontakta oss</NavLink>
                             </li>
                         </ul>
                         <div className="buttons text-center d-none d-lg-block">
-                            <NavLink to="https://nopainclinic.bestille.no/OnCust2/#!/" className="btn btn-info m-2 fs-5"><i></i>Boka tid</NavLink>
+                            <NavLink to="https://nopainclinic.bestille.no/OnCust2/#!/" className="btn-book"><i></i>Boka tid</NavLink>
                         </div>
                     </div>
                 </div>

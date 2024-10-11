@@ -19,33 +19,6 @@ const AboutPage = () => {
       <hr />
         
         </div>
-        <p className='blue-text p-3 text-center'>Allt för att du ska få rätt hjälp.</p>
-        <div className="row">
-          <Link to="/Naprapati" className="col-md-4 col-sm-6 mb-3 px-3 text-decoration-none">
-            <div className="card h-100 card-container">
-              <img className="card-img-top img-fluid" src="/assets/osteopathy-patoient-getting-tretment-massage.jpg" alt="" height={160} />
-              <div className="card-body">
-                <h5 className="card-title text-center blue-text">Naprapat</h5>
-              </div>
-            </div>
-          </Link>
-          <Link to="/Ortopedi" className="col-md-4 col-sm-6 mb-3 px-3 text-decoration-none">
-            <div className="card h-100 card-container">
-              <img className="card-img-top img-fluid" src="/assets/front-view-doctor-explaining-anatomy.jpg" alt="" height={160} />
-              <div className="card-body">
-                <h5 className="card-title text-center blue-text">Ortoped</h5>
-              </div>
-            </div>
-          </Link>
-          <Link to="/rehab" className="col-md-4 col-sm-6 mb-3 px-3 text-decoration-none">
-            <div className="card h-100 card-container">
-              <img className="card-img-top img-fluid" src="/assets/woman-doing-fitness-exercises-gym-holding-massage-foam-roller.jpg" alt="" height={180} />
-              <div className="card-body">
-                <h5 className="card-title text-center blue-text">Rehab</h5>
-              </div>
-            </div>
-          </Link>
-        </div>
 
         {/* How to Find Us Section */}
         <div className="container my-3 py-3">

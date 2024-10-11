@@ -29,19 +29,19 @@ const Ortopedi = () => {
             <li className='li-el-beh'><img className='plus' src="/assets/plus-svgrepo-com.svg" alt="plus" />Test blockad </li>
             <li className='li-el-beh'><img className='plus' src="/assets/plus-svgrepo-com.svg" alt="plus" />Botox  </li>
           </ul></div>
+          <div className='about-text-container'>
        <p className="about-text pt-4">
         Som specialist inom ortopedi och ryggkirurgi erbjuder vi en noggrann bedömning för att identifiera källan till dina besvär. 
-        Genom avancerade undersökningsmetoder och en detaljerad granskning av dina röntgenbilder, kan vi fastställa orsaken till dina problem. <p>Med hjälp av diagnostiska blockader, 
-       där lokalbedövning används, kan vi snabbt avgöra om du svarar positivt på behandlingen. Om du upplever minst 70% förbättring inom 10 minuter kan en mer långsiktig behandling erbjudas.
-        </p> </p> 
+        Genom avancerade undersökningsmetoder och en detaljerad granskning av dina röntgenbilder, kan vi fastställa orsaken till dina problem. 
+        </p> 
         <p className='about-text'>Efter en grundlig utredning får du en individanpassad behandlingsplan, utformad för att ge dig bästa möjliga resultat och hjälpa dig att återfå din livskvalitet.
         </p>
         <p className='about-text pb-4'>Låt oss hjälpa dig att bli fri från smärta och återgå till ett aktivt liv. </p>
-  <div>
+ </div> <div>
     <div></div>
   </div>
   <div className="masoud-cv">
-    <img src="/assets/Masoud-img.jpeg" alt="cv img" />
+    <img src="/assets/masoud-img.png.png" alt="cv img" />
     <div className="text-content">
         <h2>Dr Masoud Sorkhabi</h2>
         <h5 className="italic">Specialistläkare inom ortopedi och rygg kirurgi</h5>
