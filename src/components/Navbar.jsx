@@ -1,51 +1,106 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
-import Banner from './Banner'; // Import the Banner component
-import '../styles/index.css'; // Import your CSS
+import '../styles/index.css';
 
 const Navbar = () => {
-    return (
-        <>
-            <Banner />
-            <nav className="navbar navbar-expand-lg navbar-light bg-light p-3 sticky-top">
-                <div className="container">
-                    <NavLink className="navbar-brand fw-bold fs-4 px-2" to="/">
-                        <img src={`${process.env.PUBLIC_URL}/assets/logo.png`} alt="Logo" className='logo-nav' />
-                    </NavLink>
-                    
-                    {/* Boka tid button for small screens */}
-                    <div className="d-lg-none bokatid-wrapper">
-                        <NavLink to="https://nopainclinic.bestille.no/OnCust2/#!/" className="btn btn-info bokatid-button"><i></i>Boka tid</NavLink>
-                    </div>
-                    
-                    <button className="navbar-toggler mx-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav m-auto my-2 text-center">
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/">Hem</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/about">Om oss</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/ortopedi">Ortopedi</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/contact">Kontakta oss</NavLink>
-                            </li>
-                        </ul>
-                        <div className="buttons text-center d-none d-lg-block">
-                            <NavLink to="https://nopainclinic.bestille.no/OnCust2/#!/" className="btn-book"><i></i>Boka tid</NavLink>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </>
-    );
-}
+  const dropdownRef = useRef(null);
+
+  const handleScroll = useCallback(() => {
+    const currentScrollY = window.scrollY;
+    setIsVisible(currentScrollY <= lastScrollY || currentScrollY <= 100);
+    setLastScrollY(currentScrollY);
+  }, [lastScrollY]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
+
+  // Close dropdown if clicking outside of dropdown area
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    if (isDropdownOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isDropdownOpen]);
+
+  const handleToggle = () => setIsNavbarOpen((prev) => !prev);
+
+
+
+  const closeMenus = () => {
+    setIsNavbarOpen(false);
+    setIsDropdownOpen(false);
+  };
+
+  return (
+    <header className={`main-header ${isVisible ? '' : 'navbar-hidden'}`}>
+      <div className="top-strip">
+        <p className='top-strip-text'>Ej/sent avbokad tid debiteras. Vänligen avboka senast dagen innan!</p>
+        </div>
+
+      <nav className="navbar-container">
+        <div className="navbar-inner">
+          <NavLink to="/" className="navbar-logo" onClick={closeMenus}>
+            <img src={`${process.env.PUBLIC_URL}/assets/LOGO.svg`} alt="Logo" />
+          </NavLink>
+
+          {/* Hamburger Toggle */}
+          <button
+            className={`menu-toggle ${isNavbarOpen ? 'open' : ''}`}
+            onClick={handleToggle}
+            aria-label="Toggle menu"
+            aria-expanded={isNavbarOpen}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          {/* Nav Items */}
+          <ul className={`navbar-menu ${isNavbarOpen ? 'show' : ''}`}>
+            <li>
+              <NavLink className="nav-link" to="/" onClick={closeMenus}>
+                Hem
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink className="nav-link" to="/kontakta-oss" onClick={closeMenus}>
+                Kontakta oss
+              </NavLink>
+            </li>
+           
+
+            {/* Mobile Button Placement */}
+            <li className="mobile-book">
+              <NavLink className="btn-book" to="/boka-tid" onClick={closeMenus}>
+                BOKA NU
+              </NavLink>
+            </li>
+          </ul>
+
+          {/* Desktop Button Placement */}
+          <NavLink  className="btn-book desktop-book" to="/" onClick={closeMenus}>
+            BOKA NU
+          </NavLink>
+        </div>
+      </nav>
+    </header>
+  );
+};
 
 export default Navbar;
 

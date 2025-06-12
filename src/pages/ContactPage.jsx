@@ -6,13 +6,13 @@ const ContactPage = () => {
   return (
     <>
       <Navbar />
-      <div className="container container-contact my-3 py-3">
+      <div className="container container-contact my-3 py-3 page-wrapper">
         <h1 className="text-center blue-text">HÄR FINNS VI</h1>
         <hr />
-        <p className="text-center">Karl Johansgatan 100, 414 55 Göteborg</p>
-        <p className="text-center">070-582 21 42</p>
+        <p className="text-center">HENRY DUNKERS PLATS 4, 252 67 Helsingborg</p>
+        <p className="text-center">070 783 29 29</p>
         <p className="text-center">
-          <a href="mailto:drsorkhabi@nopainclinic.se">drsorkhabi@nopainclinic.se</a>
+          <a href="mailto:aktivfysio.naprapat@gmail.com">aktivfysio.naprapat@gmail.com</a>
         </p>
         <p className="mx-auto text-center">
           Tidsbokning gör du själv här på hemsidan eller ringer. Tala gärna in

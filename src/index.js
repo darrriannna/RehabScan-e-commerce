@@ -6,7 +6,7 @@ import '../src/styles/index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store.js';
-import { Home, AboutPage, ContactPage, PageNotFound, BookTime, Ortopedi, IntegrityPolicy } from './pages/index.js'
+import { Home,  ContactPage, PageNotFound, BookTime } from './pages/index.js'
 import ScrollToTop from '../src/components/ScrollToTop.jsx'
 
 
@@ -17,11 +17,8 @@ root.render(
     <Provider store={store}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/ortopedi" element={<Ortopedi />} />
-        <Route path="/bookappointment" element={<BookTime />} />
-        <Route path="/policy" element={<IntegrityPolicy />} />
+        <Route path="/kontakta-oss" element={<ContactPage />} />
+        <Route path="/boka-tid" element={<BookTime />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Provider>

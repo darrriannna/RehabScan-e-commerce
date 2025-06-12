@@ -1,14 +1,13 @@
 import React from 'react';
-import { Footer, Navbar } from '../components';
+import { Footer, Navbar, BookingCalendar } from '../components';
 import '../styles/index.css';
 
 const BookTime = () => {
   return (
     <div>
       <Navbar />
-      <div className="book-time-container">
-        <h2 className="book-time-text">Boka tid</h2>
-        </div>
+     
+        <BookingCalendar/>
 
       <Footer/>
     </div>
