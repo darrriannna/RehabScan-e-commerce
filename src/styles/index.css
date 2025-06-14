@@ -480,3 +480,13 @@ color: #ffffff;
   list-style-type: disc;
   padding-left: 20px;
 }
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

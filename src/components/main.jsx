@@ -1,14 +1,30 @@
 import React from 'react';
 import '../styles/index.css'; 
 import NaprapatSection from './Naprapat';
+import { useEffect } from "react";
 
 
+const Home = () => {useEffect(() => {
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
 
-const Home = () => {
+  const elements = document.querySelectorAll(".animate-on-scroll");
+  elements.forEach(el => observer.observe(el));
+
+  return () => elements.forEach(el => observer.unobserve(el));
+}, []);
   return (
     <div className="main page-wrapper">
  <div className='main-image'>
- <div className="overlay">
+ <div className="overlay .animate-on-scroll">
         <h3 className='header-home'>Boka tid hos <span className='italic'>Legitimerad Naprapat</span> i Helsingborg</h3>
         <button className='btn-book-pink'> <a
     className="link-book"
