@@ -54,7 +54,7 @@ const Navbar = () => {
       <nav className="navbar-container">
         <div className="navbar-inner">
           <NavLink to="/" className="navbar-logo" onClick={closeMenus}>
-            <img src={`${process.env.PUBLIC_URL}/assets/LOGO.svg`} alt="Logo" />
+            <img src={`${process.env.PUBLIC_URL}/assets/logo.svg`} alt="Logo" />
           </NavLink>
 
           {/* Hamburger Toggle */}
@@ -86,16 +86,28 @@ const Navbar = () => {
 
             {/* Mobile Button Placement */}
             <li className="mobile-book">
-              <NavLink className="btn-book" to="/boka-tid" onClick={closeMenus}>
-                BOKA NU
-              </NavLink>
+            <a
+    className="btn-book"
+    href="https://ww1.clinicbuddy.com/onlinebooking/-5030"
+    target="_blank"
+    rel="noopener noreferrer"
+    onClick={closeMenus}
+  >
+    BOKA NU
+  </a>
             </li>
           </ul>
 
           {/* Desktop Button Placement */}
-          <NavLink  className="btn-book desktop-book" to="/" onClick={closeMenus}>
-            BOKA NU
-          </NavLink>
+          <a
+  className="btn-book desktop-book"
+  href="https://ww1.clinicbuddy.com/onlinebooking/-5030"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={closeMenus}
+>
+  BOKA NU
+</a>
         </div>
       </nav>
     </header>

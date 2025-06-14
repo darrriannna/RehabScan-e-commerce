@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/index.css'; 
-import { Link } from "react-router-dom";// Import your custom CSS file
+import NaprapatSection from './Naprapat';
 
 
 
@@ -9,8 +9,15 @@ const Home = () => {
     <div className="main page-wrapper">
  <div className='main-image'>
  <div className="overlay">
-        <h3 className='header-home'>Boka tid hos <span className='italic'>legitimerad Naprapat</span> i Helsingborg</h3>
-        <button className='btn-book-pink'><Link to="/boka-tid" className='link-book'>BOKA TID</Link></button>
+        <h3 className='header-home'>Boka tid hos <span className='italic'>Legitimerad Naprapat</span> i Helsingborg</h3>
+        <button className='btn-book-pink'> <a
+    className="link-book"
+    href="https://ww1.clinicbuddy.com/onlinebooking/-5030"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    BOKA NU
+  </a></button>
         <div ><img className='small-logo' src="./assets/logo-aktiv.png" alt="naprapat aktiv fysio helsingborg" /></div>
       </div>
 
@@ -28,6 +35,7 @@ const Home = () => {
 />
 
   </div>
+  <NaprapatSection/>
  </div>
       
 
