@@ -439,21 +439,21 @@ color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
   padding: 40px;
   background-color: white;
   flex-wrap: wrap;
 }
 
 .naprapat-image {
-  max-width: 320px;
-  min-height: 550px;
+  max-width: 370px;
+  min-height: 370px;
   object-fit: cover;
 }
 
 .naprapat-text-box {
-  max-width: 320px;
-  min-height: 550px;
+  max-width: 370px;
+  max-height: 370px;
   background-color: #000000;
   padding: 40px;
   box-sizing: border-box;
@@ -464,22 +464,27 @@ color: #ffffff;
 
 .naprapat-text-box h2 {
   font-family: 'Heiti TC', sans-serif;
-  font-size: 38px;
+  font-size: 30px;
   font-weight: 300;
-  line-height: 45px;
+  line-height: 35px;
   color: rgb(255, 255, 255);
   margin-bottom: 40px;
 }
 
 .naprapat-text-box ul {
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 300;
-  line-height: 45px;
+  line-height: 35px;
   color: rgb(255, 255, 255);
   list-style-type: disc;
   padding-left: 20px;
 }
+@media (max-width: 768px){
+  .naprapat-text-box{
+    min-width: 370px;
+  }
+  }
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(40px);
