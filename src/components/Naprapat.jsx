@@ -28,7 +28,7 @@ const NaprapatSection = () => {useEffect(() => {
       <div className="naprapat-text-box animate-on-scroll">
         <h2>Besök hos<br />Legitimerad Naprapat</h2>
         <ul>
-          <li>Sport skador</li>
+          <li>Akut skador</li>
           <li>Ländrygg och nacksmärta</li>
           <li>Axel och höftsmärta</li>
           <li>Arbetsskador</li>
