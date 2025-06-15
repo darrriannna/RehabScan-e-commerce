@@ -23,8 +23,8 @@ const NaprapatSection = () => {useEffect(() => {
 }, []);
   return (
     <div className="naprapat-container">
-      <img src="./assets/left.png" alt="Behandling vänster" className="naprapat-image animate-on-scroll" />
-      
+    
+          <img src="./assets/left.png" alt="Behandling vänster" className="naprapat-image animate-on-scroll" />    
       <div className="naprapat-text-box animate-on-scroll">
         <h2>Besök hos<br />Legitimerad Naprapat</h2>
         <ul>
@@ -35,7 +35,10 @@ const NaprapatSection = () => {useEffect(() => {
         </ul>
       </div>
 
-      <img src="./assets/right.png" alt="Behandling höger" className="naprapat-image animate-on-scroll" />
+      <div className="naprapat-text-box box-1 animate-on-scroll">
+        <h2>Vänligen avboka senast 24 timmar innan ditt bokade besök för att undvika debitering.</h2>
+       <p>För att avboka tid maila till aktivfysio.naprapat@gmail.com</p>
+      </div>
     </div>
   );
 };

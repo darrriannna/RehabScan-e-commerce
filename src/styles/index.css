@@ -480,10 +480,20 @@ color: #ffffff;
   list-style-type: disc;
   padding-left: 20px;
 }
+
 @media (max-width: 768px){
   .naprapat-text-box{
     min-width: 370px;
   }
+  }
+
+  .box-1{
+    background-color: rgb(226, 207, 177);
+    color: #000;
+    min-height: 370px;
+  }
+  .box-1 h2{
+    color: #000;
   }
 .animate-on-scroll {
   opacity: 0;

@@ -47,9 +47,6 @@ const Navbar = () => {
 
   return (
     <header className={`main-header ${isVisible ? '' : 'navbar-hidden'}`}>
-      <div className="top-strip">
-        <p className='top-strip-text'>Ej/sent avbokad tid debiteras. Vänligen avboka senast dagen innan!</p>
-        </div>
 
       <nav className="navbar-container">
         <div className="navbar-inner">
