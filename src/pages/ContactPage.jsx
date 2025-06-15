@@ -19,7 +19,7 @@ const ContactPage = () => {
           ett meddelande om vi inte har möjlighet att svara, så ringer vi upp
           så fort vi kan. Maila oss gärna om du har några frågor.
         </p>
-        <h4 className="text-center">Ej/sent avbokad tid debiteras. Vänligen avboka senast dagen innan! </h4>
+       
       </div>
       <Footer />
     </>

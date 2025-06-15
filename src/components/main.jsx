@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/index.css'; 
 import NaprapatSection from './Naprapat';
 import { useEffect } from "react";
+import Prices from './Prices';
 
 
 const Home = () => {useEffect(() => {
@@ -49,7 +50,7 @@ const Home = () => {useEffect(() => {
   loading="lazy"
   referrerPolicy="no-referrer-when-downgrade"
 />
-
+<div><Prices/></div>
   </div>
   <NaprapatSection/>
  </div>
